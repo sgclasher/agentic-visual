@@ -48,14 +48,14 @@ function OrchestrationNode({ data }: any) {
         type="target" 
         position={Position.Top} 
         className="w-3 h-3 bg-red-700" 
-        style={{ top: -2, left: '50%' }}
+        style={{ top: -4, left: '50%' }}
       />
       <Handle 
         id="target-left"
         type="target" 
         position={Position.Left} 
         className="w-3 h-3 bg-red-700" 
-        style={{ left: -2, top: '50%' }}
+        style={{ left: -4, top: '50%' }}
       />
       <div className="font-bold text-center text-lg">{data.label}</div>
       <div className="text-sm text-center">{data.description}</div>
@@ -64,14 +64,14 @@ function OrchestrationNode({ data }: any) {
         type="source" 
         position={Position.Bottom} 
         className="w-3 h-3 bg-red-700" 
-        style={{ bottom: -2, left: '50%' }}
+        style={{ bottom: -4, left: '50%' }}
       />
       <Handle 
         id="source-right"
         type="source" 
         position={Position.Right} 
         className="w-3 h-3 bg-red-700" 
-        style={{ right: -2, top: '50%' }}
+        style={{ right: -4, top: '50%' }}
       />
     </motion.div>
   );
@@ -91,14 +91,14 @@ function AgentNode({ data }: any) {
         type="target" 
         position={Position.Top} 
         className="w-3 h-3 bg-white border-2 border-blue-500"
-        style={{ top: -2, left: '50%' }}
+        style={{ top: -4, left: '50%' }}
       />
       <Handle 
         id="target-left"
         type="target" 
         position={Position.Left} 
         className="w-3 h-3 bg-white border-2 border-blue-500"
-        style={{ left: -2, top: '50%' }}
+        style={{ left: -4, top: '50%' }}
       />
       <div className="text-center">
         <div className="font-bold text-lg mb-1">{data.label}</div>
@@ -114,14 +114,14 @@ function AgentNode({ data }: any) {
         type="source" 
         position={Position.Bottom} 
         className="w-3 h-3 bg-white border-2 border-blue-500"
-        style={{ bottom: -2, left: '50%' }}
+        style={{ bottom: -4, left: '50%' }}
       />
       <Handle 
         id="source-right"
         type="source" 
         position={Position.Right} 
         className="w-3 h-3 bg-white border-2 border-blue-500"
-        style={{ right: -2, top: '50%' }}
+        style={{ right: -4, top: '50%' }}
       />
     </motion.div>
   );
@@ -130,27 +130,42 @@ function AgentNode({ data }: any) {
 function TriggerNode({ data }: any) {
   return (
     <motion.div 
-      className="px-4 py-2 rounded-lg bg-blue-600 text-white"
-      initial={{ y: -20, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ type: "spring", delay: 0.2 }}
+      className="border-2 border-blue-500 bg-blue-100 px-4 py-2 rounded-lg shadow-lg w-[180px]"
+      initial={{ scale: 0.8, opacity: 0 }}
+      animate={{ scale: 1, opacity: 1 }}
+      transition={{ type: "spring", stiffness: 200, damping: 10 }}
+      whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
     >
       <Handle 
-        id="source-right"
-        type="source" 
-        position={Position.Right} 
-        className="w-3 h-3 bg-blue-700" 
-        style={{ right: -2, top: '50%' }}
+        id="target-top" 
+        type="target" 
+        position={Position.Top}
+        className="w-3 h-3 bg-blue-700"
+        style={{ top: -4, left: '50%' }}
       />
       <Handle 
-        id="source-bottom"
-        type="source" 
-        position={Position.Bottom} 
-        className="w-3 h-3 bg-blue-700" 
-        style={{ bottom: -2, left: '50%' }}
+        id="target-left" 
+        type="target" 
+        position={Position.Left}
+        className="w-3 h-3 bg-blue-700"
+        style={{ left: -4, top: '50%' }}
       />
-      <div className="font-bold text-center">{data.label}</div>
-      <div className="text-xs text-center">{data.description}</div>
+      <div className="font-bold text-blue-900">{data.label}</div>
+      <div className="text-xs text-blue-700">{data.description || 'Trigger'}</div>
+      <Handle 
+        id="source-bottom" 
+        type="source" 
+        position={Position.Bottom}
+        className="w-3 h-3 bg-blue-700"
+        style={{ bottom: -4, left: '50%' }}
+      />
+      <Handle 
+        id="source-right" 
+        type="source" 
+        position={Position.Right}
+        className="w-3 h-3 bg-blue-700"
+        style={{ right: -4, top: '50%' }}
+      />
     </motion.div>
   );
 }
@@ -199,14 +214,36 @@ function ValueNode({ data }: any) {
       transition={{ type: "spring", stiffness: 200, damping: 10, delay: 0.5 }}
       whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
     >
-      <div className="font-bold text-center text-sm">{data.label}</div>
-      {data.description && (
-        <div className="text-xs text-center mt-1 opacity-90">{data.description}</div>
-      )}
-      
-      {/* Handles for connection - positioned to look better with value nodes */}
-      <Handle type="target" position={Position.Top} className="!bg-emerald-600" />
-      <Handle type="source" position={Position.Bottom} className="!bg-emerald-600" />
+      <Handle 
+        id="target-top"
+        type="target" 
+        position={Position.Top} 
+        className="w-3 h-3 bg-white border-2 border-emerald-500" 
+        style={{ top: -4, left: '50%' }}
+      />
+      <Handle 
+        id="target-left"
+        type="target" 
+        position={Position.Left} 
+        className="w-3 h-3 bg-white border-2 border-emerald-500" 
+        style={{ left: -4, top: '50%' }}
+      />
+      <div className="font-bold text-center">{data.label}</div>
+      <div className="text-xs opacity-80 text-center">{data.description}</div>
+      <Handle 
+        id="source-bottom"
+        type="source" 
+        position={Position.Bottom} 
+        className="w-3 h-3 bg-white border-2 border-emerald-500" 
+        style={{ bottom: -4, left: '50%' }}
+      />
+      <Handle 
+        id="source-right"
+        type="source" 
+        position={Position.Right} 
+        className="w-3 h-3 bg-white border-2 border-emerald-500" 
+        style={{ right: -4, top: '50%' }}
+      />
     </motion.div>
   );
 }
@@ -225,14 +262,14 @@ function ToolsGroupNode({ data }: any) {
         type="target" 
         position={Position.Top} 
         className="w-3 h-3 bg-gray-500" 
-        style={{ top: -2, left: '50%' }}
+        style={{ top: -4, left: '50%' }}
       />
       <Handle 
         id="target-left"
         type="target" 
         position={Position.Left} 
         className="w-3 h-3 bg-gray-500" 
-        style={{ left: -2, top: '50%' }}
+        style={{ left: -4, top: '50%' }}
       />
       {data.tools.map((tool: any, index: number) => (
         <div key={index} className={`${index > 0 ? 'mt-3 pt-3 border-t border-gray-500' : ''}`}>
@@ -245,14 +282,14 @@ function ToolsGroupNode({ data }: any) {
         type="source" 
         position={Position.Bottom} 
         className="w-3 h-3 bg-gray-500" 
-        style={{ bottom: -2, left: '50%' }}
+        style={{ bottom: -4, left: '50%' }}
       />
       <Handle 
         id="source-right"
         type="source" 
         position={Position.Right} 
         className="w-3 h-3 bg-gray-500" 
-        style={{ right: -2, top: '50%' }}
+        style={{ right: -4, top: '50%' }}
       />
     </motion.div>
   );
@@ -313,11 +350,21 @@ export function FloatingEdge({
   const [edgePath, setEdgePath] = useState('');
   const [labelX, setLabelX] = useState(0);
   const [labelY, setLabelY] = useState(0);
+  const { getNodes } = useReactFlow();
 
   useEffect(() => {
+    // Get the actual nodes to determine exact handle positions
+    const nodes = getNodes();
+    const sourceNode = nodes.find(node => node.id === source);
+    const targetNode = nodes.find(node => node.id === target);
+    
     // Create a more pronounced curve for orchestration edges
     const isOrchestrationEdge = data?.type === 'orchestration';
-    const curvature = isOrchestrationEdge ? 0.5 : 0.2;
+    const isTriggerEdge = data?.type === 'trigger';
+    
+    // Adjust these parameters to control how the curve looks
+    let curvature = isOrchestrationEdge ? 0.5 : 0.2;
+    if (isTriggerEdge) curvature = 0.4; // Increase curvature for trigger edges
     
     // Calculate control points for the bezier curve
     const dx = Math.abs(targetX - sourceX);
@@ -325,8 +372,33 @@ export function FloatingEdge({
     
     let controlX1, controlY1, controlX2, controlY2;
     
-    // Use vertical or horizontal bezier based on node positions
-    if (dx > dy) {
+    // Check if this is a trigger node connection
+    if (sourceNode?.type === 'triggerNode' || targetNode?.type === 'triggerNode') {
+      // For trigger connections, use a more pronounced horizontal curve
+      // and ensure smooth connection to handles
+      controlX1 = sourceX + dx * 0.6;
+      controlY1 = sourceY;
+      controlX2 = targetX - dx * 0.6;
+      controlY2 = targetY;
+      
+      // Adjust for vertical offset if exists
+      if (Math.abs(sourceY - targetY) > 20) {
+        controlY1 = sourceY + (targetY - sourceY) * 0.3;
+        controlY2 = targetY - (targetY - sourceY) * 0.3;
+      }
+    } else if (isOrchestrationEdge) {
+      // For orchestration edges, create a more pronounced vertical curve
+      controlX1 = sourceX;
+      controlY1 = sourceY + dy * 0.6;
+      controlX2 = targetX;
+      controlY2 = targetY - dy * 0.6;
+      
+      // Adjust for horizontal offset if exists
+      if (Math.abs(sourceX - targetX) > 20) {
+        controlX1 = sourceX + (targetX - sourceX) * 0.3;
+        controlX2 = targetX - (targetX - sourceX) * 0.3;
+      }
+    } else if (dx > dy) {
       // More horizontal arrangement
       controlX1 = sourceX + dx * curvature;
       controlY1 = sourceY;
@@ -346,8 +418,8 @@ export function FloatingEdge({
 
     // Position for label
     setLabelX((sourceX + targetX) / 2);
-    setLabelY((sourceY + targetY) / 2);
-  }, [sourceX, sourceY, targetX, targetY, sourcePosition, targetPosition, data]);
+    setLabelY((sourceY + targetY) / 2 - 10); // Move label slightly above the path
+  }, [sourceX, sourceY, targetX, targetY, sourcePosition, targetPosition, data, source, target, getNodes]);
 
   const edgeType = data?.type as string || 'default';
   const edgeLabel = data?.label as React.ReactNode;
@@ -394,7 +466,36 @@ const edgeTypes = {
   orchestration: FloatingEdge,
 };
 
-// Update edge styles
+// Add this in the global style section, after other style definitions
+const globalStyles = `
+  @keyframes flow {
+    from {
+      stroke-dashoffset: 10;
+    }
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+  
+  .react-flow__handle {
+    opacity: 1 !important;
+    transition: all 0.2s ease;
+  }
+  
+  .react-flow__handle:hover {
+    transform: scale(1.5);
+  }
+  
+  .react-flow__edge-path {
+    transition: stroke-width 0.2s ease;
+  }
+  
+  .react-flow__edge:hover .react-flow__edge-path {
+    stroke-width: 3px;
+  }
+`;
+
+// Update the edge styles object
 const edgeStyles = {
   default: {
     stroke: '#b1b1b7',
@@ -404,10 +505,10 @@ const edgeStyles = {
   },
   trigger: {
     stroke: '#3b82f6',
-    strokeWidth: 2,
+    strokeWidth: 2.5,
     animated: true,
     strokeDasharray: '0.5, 3',
-    filter: 'drop-shadow(0 1px 2px rgba(59, 130, 246, 0.3))'
+    filter: 'drop-shadow(0 1px 3px rgba(59, 130, 246, 0.3))'
   },
   orchestration: {
     stroke: '#ef4444',
@@ -418,7 +519,7 @@ const edgeStyles = {
   },
   value: {
     stroke: '#10b981', // Emerald color for value connections
-    strokeWidth: 2,
+    strokeWidth: 2.5,
     strokeDasharray: '4, 4', // Dashed line for value connections
     animated: true,
     strokeLinecap: 'round' as const,
@@ -426,7 +527,7 @@ const edgeStyles = {
   },
   useCaseValue: {
     stroke: '#3b82f6', // Blue for use case value connections
-    strokeWidth: 2,
+    strokeWidth: 2.5,
     strokeDasharray: '4, 4',
     animated: true,
     strokeLinecap: 'round' as const,
@@ -434,7 +535,7 @@ const edgeStyles = {
   },
   solutionValue: {
     stroke: '#8b5cf6', // Purple for solution value connections
-    strokeWidth: 2,
+    strokeWidth: 2.5,
     strokeDasharray: '4, 4',
     animated: true,
     strokeLinecap: 'round' as const,
@@ -492,13 +593,13 @@ const getLayoutedElements = (nodes: Node[], edges: Edge[], direction = 'TB') => 
   // Improved configuration for more consistent spacing and better alignment
   dagreGraph.setGraph({ 
     rankdir: direction, 
-    nodesep: 100,       // Reduce horizontal spacing between nodes
-    ranksep: 150,       // Reduce vertical spacing between ranks
-    marginx: 30,        // Smaller margins
-    marginy: 30,
+    nodesep: 120,       // Increase horizontal spacing between nodes
+    ranksep: 180,       // Increase vertical spacing between ranks
+    marginx: 40,        // Slightly larger margins
+    marginy: 40,
     align: 'UL',        // Upper left alignment often works better
-    edgesep: 50,        // Edge separation
-    acyclicer: 'greedy' // Help with cycles
+    edgesep: 70,        // Increased edge separation
+    acyclicer: 'greedy', // Help with cycles
   });
   
   // Configure node constraints based on node type
@@ -508,23 +609,23 @@ const getLayoutedElements = (nodes: Node[], edges: Edge[], direction = 'TB') => 
     let height = 0;
     
     if (node.type === 'orchestratorNode') {
-      width = 220;
-      height = 80;
+      width = 250;
+      height = 100;
     } else if (node.type === 'agentNode') {
-      width = 200;
-      height = 120;
+      width = 220;
+      height = 140;
     } else if (node.type === 'triggerNode') {
-      width = 170;
-      height = 70;
-    } else if (node.type === 'toolsGroupNode') {
-      width = 180;
-      height = 120;
-    } else if (node.type === 'valueNode') {
-      width = 160;
-      height = 60;
-    } else {
       width = 180;
       height = 80;
+    } else if (node.type === 'toolsGroupNode') {
+      width = 200;
+      height = 140;
+    } else if (node.type === 'valueNode') {
+      width = 180;
+      height = 70;
+    } else {
+      width = 200;
+      height = 100;
     }
     
     // Set node dimensions in the dagre graph
@@ -548,20 +649,23 @@ const getLayoutedElements = (nodes: Node[], edges: Edge[], direction = 'TB') => 
     // Special treatment for Orchestrator to Agent connections
     if (edge.source === 'orchestrator') {
       dagreGraph.setEdge(edge.source, edge.target, { 
-        weight: 2,        // Give higher precedence to orchestrator connections
-        minlen: 1         // Minimum edge length
+        weight: 3,        // Give higher precedence to orchestrator connections
+        minlen: 2         // Increase minimum edge length
       });
     } 
     // Special handling for trigger connections 
     else if (triggerIds.includes(edge.source)) {
       dagreGraph.setEdge(edge.source, edge.target, {
-        weight: 1,        // Lower precedence than main workflow
-        minlen: 1
+        weight: 2,        // Higher precedence than default but lower than orchestrator
+        minlen: 1.5       // Slightly increased minimum edge length
       });
     }
     // Regular connections
     else {
-      dagreGraph.setEdge(edge.source, edge.target);
+      dagreGraph.setEdge(edge.source, edge.target, {
+        weight: 1,
+        minlen: 1
+      });
     }
   });
   
@@ -590,9 +694,6 @@ const getLayoutedElements = (nodes: Node[], edges: Edge[], direction = 'TB') => 
       height: nodeWithPosition.height
     };
   });
-  
-  // Now adjust any nodes that need special positioning
-  // For example, if triggers don't look right, we can place them manually
   
   // Return the positioned nodes and edges
   return {
@@ -623,6 +724,19 @@ const AnimatedWorkflow: React.FC<AnimatedWorkflowProps> = ({
   const flowDirectionContextValue = useMemo(() => ({
     direction: layoutDirection
   }), [layoutDirection]);
+
+  // Add the global styles
+  useEffect(() => {
+    // Add styles to the document head
+    const styleElement = document.createElement('style');
+    styleElement.innerHTML = globalStyles;
+    document.head.appendChild(styleElement);
+
+    // Clean up on unmount
+    return () => {
+      document.head.removeChild(styleElement);
+    };
+  }, []);
 
   // Reset layout flag when useCase changes
   useEffect(() => {
@@ -669,7 +783,7 @@ const AnimatedWorkflow: React.FC<AnimatedWorkflowProps> = ({
             label: trigger.name || 'Trigger',
             description: trigger.condition || 'Initiates the process'
           },
-          position: { x: 150 + (index * 200), y: 50 }, // Keep same horizontal position, aligned with orchestrator
+          position: { x: 150 + (index * 200), y: 50 },
           style: { background: 'transparent', border: 'none', boxShadow: 'none' },
           className: 'no-shadow'
         });
@@ -677,9 +791,14 @@ const AnimatedWorkflow: React.FC<AnimatedWorkflowProps> = ({
         newEdges.push({
           id: `edge-${triggerNodeId}-orchestrator`,
           source: triggerNodeId,
+          sourceHandle: 'source-right',
           target: 'orchestrator',
+          targetHandle: 'target-left',
           type: 'trigger',
-          animated: true
+          animated: true,
+          data: { 
+            type: 'trigger'
+          }
         });
       });
       
@@ -731,7 +850,10 @@ const AnimatedWorkflow: React.FC<AnimatedWorkflowProps> = ({
           target: agentNodeId,
           targetHandle: 'target-top',
           type: 'orchestration',
-          animated: true
+          animated: true,
+          data: { 
+            type: 'orchestration'
+          }
         });
         
         // Add tool group node for each agent with tools, but only if tools are visible globally
@@ -767,7 +889,10 @@ const AnimatedWorkflow: React.FC<AnimatedWorkflowProps> = ({
             target: toolGroupId,
             targetHandle: 'target-top',
             type: 'default',
-            animated: false
+            animated: false,
+            data: { 
+              type: 'default'
+            }
           });
         }
       });
@@ -847,13 +972,15 @@ const AnimatedWorkflow: React.FC<AnimatedWorkflowProps> = ({
           
           // Connect value to agent or its tools
           const sourceId = showTools ? `toolgroup-${valueData.agentId}` : agentNodeId;
-          const sourceHandle = showTools ? '' : 'source-bottom';
+          const sourceHandle = showTools ? 'source-bottom' : 'source-bottom';
+          const targetHandle = 'target-top';
           
           newEdges.push({
             id: `edge-${sourceId}-${agentValueId}`,
             source: sourceId,
             sourceHandle: sourceHandle,
             target: agentValueId,
+            targetHandle: targetHandle,
             type: 'smoothstep',
             style: edgeStyles.value,
             animated: true
@@ -889,9 +1016,9 @@ const AnimatedWorkflow: React.FC<AnimatedWorkflowProps> = ({
             id: value.id,
             type: 'valueNode',
             data: { 
-              label: value.label, 
+              label: value.label,
               description: value.description,
-              valueType: 'useCase' // Use case level value
+              valueType: 'useCase' // Use case specific value
             },
             position: { x: valueX, y: processValueY },
             style: { background: 'transparent', border: 'none', boxShadow: 'none' },
