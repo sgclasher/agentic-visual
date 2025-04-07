@@ -1,0 +1,1358 @@
+{
+  "script_execution_info": {
+    "run_time": "2025-04-04 15:19:13",
+    "target_app_scope_id": "33df17ef47d8ea10d93447c4416d43cd",
+    "filter_strategy": "Components fetched by scope. Assumed active if fetched. Uses UseCase.team for agent linking. Output uses reference model.",
+    "version": "v28"
+  },
+  "use_cases": [
+    {
+      "sys_id": "062154d947242210d93447c4416d437f",
+      "name": "RFX Request Intake Manager",
+      "description": "This use case manages the intake process for new RFX (RFP, RFI, RFQ) requests from business users, ensuring all required information is collected, validated, and properly recorded in the system before document generation.",
+      "team": "da221c1d47242210d93447c4416d4392",
+      "sys_created_on": "2025-03-26 15:53:07",
+      "sys_updated_on": "2025-03-31 15:53:15",
+      "sys_scope": "33df17ef47d8ea10d93447c4416d43cd",
+      "agents": [
+        {
+          "sys_id": "c12f605947e42210d93447c4416d43b8",
+          "name": "RFX Approval Coordinator"
+        },
+        {
+          "sys_id": "0ccce05547e42210d93447c4416d4367",
+          "name": "RFX Validator"
+        },
+        {
+          "sys_id": "943660d947a42210d93447c4416d43c5",
+          "name": "RFX Requirements Collector"
+        }
+      ],
+      "triggers": [
+        {
+          "sys_id": "a68530d147282210d93447c4416d43b5"
+        }
+      ]
+    },
+    {
+      "sys_id": "21e5931147e46210d93447c4416d4362",
+      "name": "RFX Vendor Q&A Management",
+      "description": "Manages vendor questions during the RFx process, generating professional and consistent responses while maintaining procurement integrity.",
+      "team": "96165f1147e46210d93447c4416d43b9",
+      "sys_created_on": "2025-03-27 06:09:11",
+      "sys_updated_on": "2025-03-28 02:22:48",
+      "sys_scope": "33df17ef47d8ea10d93447c4416d43cd",
+      "agents": [
+        {
+          "sys_id": "7bc797d147e46210d93447c4416d43ca",
+          "name": "RFX Vendor Question Answerer"
+        },
+        {
+          "sys_id": "a38753d147e46210d93447c4416d432e",
+          "name": "RFx Vendor Question Pre-Processor"
+        }
+      ],
+      "triggers": [
+        {
+          "sys_id": "331c139947e46210d93447c4416d43b0"
+        }
+      ]
+    },
+    {
+      "sys_id": "55c5d6dd47206210d93447c4416d438d",
+      "name": "RFX Document Generation",
+      "description": "This use case generates complete RFX documents based on approved requests by retrieving data, creating content, formatting to HTML, and storing the final document.",
+      "team": "606fde1d47606210d93447c4416d43b4",
+      "sys_created_on": "2025-03-27 02:10:08",
+      "sys_updated_on": "2025-03-31 21:39:12",
+      "sys_scope": "33df17ef47d8ea10d93447c4416d43cd",
+      "agents": [
+        {
+          "sys_id": "e5f37a9947e06210d93447c4416d43f3",
+          "name": "RFX Document Creator"
+        },
+        {
+          "sys_id": "188f125d47606210d93447c4416d4309",
+          "name": "RFX Data Retriever"
+        }
+      ],
+      "triggers": [
+        {
+          "sys_id": "e628be1147246210d93447c4416d430b"
+        }
+      ]
+    },
+    {
+      "sys_id": "6fcf107947e0e210d93447c4416d438f",
+      "name": "RFX Vendor Finalist Selection",
+      "description": "Supports decision making for final vendor selection by comparing top-ranked proposals and generating selection recommendations",
+      "team": "5260207947e0e210d93447c4416d43d6",
+      "sys_created_on": "2025-03-28 06:12:21",
+      "sys_updated_on": "2025-03-31 06:31:08",
+      "sys_scope": "33df17ef47d8ea10d93447c4416d43cd",
+      "agents": [
+        {
+          "sys_id": "6611acb947e0e210d93447c4416d432d",
+          "name": "RFX Award Communication Agent"
+        },
+        {
+          "sys_id": "34c064b947e0e210d93447c4416d438e",
+          "name": "RFX Decision Support Agent"
+        },
+        {
+          "sys_id": "cf606c7947e0e210d93447c4416d43da",
+          "name": "RFX Vendor Comparison Agent"
+        }
+      ],
+      "triggers": [
+        {
+          "sys_id": "496efb269724621076cf3ee8c253afe3"
+        }
+      ]
+    },
+    {
+      "sys_id": "f4c32b6d9764a21076cf3ee8c253af2e",
+      "name": "RFX Vendor Evaluation",
+      "description": "Streamlines evaluation of vendor proposals against predefined evaluation criteria using AI agents.",
+      "team": "704d6b6997a4a21076cf3ee8c253af32",
+      "sys_created_on": "2025-03-28 02:28:53",
+      "sys_updated_on": "2025-03-31 18:11:49",
+      "sys_scope": "33df17ef47d8ea10d93447c4416d43cd",
+      "agents": [
+        {
+          "sys_id": "6034b3e197e4a21076cf3ee8c253af71",
+          "name": "RFX Submission Evaluation Agent"
+        },
+        {
+          "sys_id": "a64f143947e0e210d93447c4416d432c",
+          "name": "RFX Scoring Coordinator"
+        },
+        {
+          "sys_id": "b011ffad97a4a21076cf3ee8c253afaa",
+          "name": "RFX Submission Intake Agent"
+        }
+      ],
+      "triggers": [
+        {
+          "sys_id": "d76f43e69720621076cf3ee8c253af33"
+        }
+      ]
+    }
+  ],
+  "agents": {
+    "0ccce05547e42210d93447c4416d4367": {
+      "sys_id": "0ccce05547e42210d93447c4416d4367",
+      "name": "RFX Validator",
+      "description": "Specialized agent that validates RFX request information against organizational policies and standards",
+      "sys_created_on": "2025-03-26 17:51:00",
+      "sys_updated_on": "2025-03-29 22:16:57",
+      "sys_scope": "33df17ef47d8ea10d93447c4416d43cd",
+      "tools": [
+        {
+          "sys_id": "24be241947e42210d93447c4416d43e7",
+          "name": "Get RFX Request",
+          "agent_tool_m2m_config": {
+            "sys_id": "6cbe241947e42210d93447c4416d43e9",
+            "inputs": [],
+            "execution_mode": "autopilot",
+            "display_output": "1",
+            "output_transformation_strategy": "paraphrase",
+            "name_in_agent": "Get RFX Request",
+            "description_in_agent": "Retrieves RFX Request record details, including: number, type, short description, status, budget range, requirements"
+          }
+        },
+        {
+          "sys_id": "e0be241947e42210d93447c4416d43ee",
+          "name": "Validate RFX Request",
+          "agent_tool_m2m_config": {
+            "sys_id": "a8be241947e42210d93447c4416d43f0",
+            "inputs": [],
+            "execution_mode": "autopilot",
+            "display_output": "1",
+            "output_transformation_strategy": "paraphrase",
+            "name_in_agent": "Validate RFX Request",
+            "description_in_agent": "Validates an RFX request against organizational policies and standards, checking for completeness, compliance, and adherence to best practices. Use this tool after all information has been collected to ensure the request meets requirements before routing for approval."
+          }
+        },
+        {
+          "sys_id": "e4bea41947e42210d93447c4416d438e",
+          "name": "Update RFX Status",
+          "agent_tool_m2m_config": {
+            "sys_id": "acbea41947e42210d93447c4416d4390",
+            "inputs": [],
+            "execution_mode": "autopilot",
+            "display_output": "1",
+            "output_transformation_strategy": "paraphrase",
+            "name_in_agent": "Update RFX Status",
+            "description_in_agent": "Updates an existing RFX request with modified or additional information. Use this tool when changes need to be made to an existing request, such as adding missing information or making corrections based on validation feedback."
+          }
+        }
+      ]
+    },
+    "188f125d47606210d93447c4416d4309": {
+      "sys_id": "188f125d47606210d93447c4416d4309",
+      "name": "RFX Data Retriever",
+      "description": "Specialized agent that retrieves approved RFX request data",
+      "sys_created_on": "2025-03-27 02:11:23",
+      "sys_updated_on": "2025-03-30 00:25:05",
+      "sys_scope": "33df17ef47d8ea10d93447c4416d43cd",
+      "tools": [
+        {
+          "sys_id": "5f5fae9147e06210d93447c4416d4397",
+          "name": "Get Approved RFX Details",
+          "agent_tool_m2m_config": {
+            "sys_id": "175fae9147e06210d93447c4416d439b",
+            "inputs": [],
+            "execution_mode": "autopilot",
+            "display_output": "1",
+            "output_transformation_strategy": "paraphrase",
+            "name_in_agent": "Get Approved RFX Details",
+            "description_in_agent": "This tool retrieves comprehensive information about an RFX request.  Provide it with the RFX Request number. The output will be structured data that can be processed by other agents or tools.  RFX details include: Budget Range, Expected Delivery Date, Submission Deadline, Short Description, Requirements, Type, Requirements, Number, Approval Status"
+          }
+        }
+      ]
+    },
+    "34c064b947e0e210d93447c4416d438e": {
+      "sys_id": "34c064b947e0e210d93447c4416d438e",
+      "name": "RFX Decision Support Agent",
+      "description": "Generates a summary justification based on vendor comparison.",
+      "sys_created_on": "2025-03-28 06:15:06",
+      "sys_updated_on": "2025-03-31 07:01:02",
+      "sys_scope": "33df17ef47d8ea10d93447c4416d43cd",
+      "tools": [
+        {
+          "sys_id": "da930b6a97ec221076cf3ee8c253af23",
+          "name": "RFX Selection Justification Tool",
+          "agent_tool_m2m_config": {
+            "sys_id": "1a938b6a97ec221076cf3ee8c253af87",
+            "inputs": [],
+            "execution_mode": "autopilot",
+            "display_output": "1",
+            "output_transformation_strategy": "paraphrase",
+            "name_in_agent": "RFX Selection Justification Tool",
+            "description_in_agent": "Creates a clear, objective justification for the final vendor selection"
+          }
+        }
+      ]
+    },
+    "6034b3e197e4a21076cf3ee8c253af71": {
+      "sys_id": "6034b3e197e4a21076cf3ee8c253af71",
+      "name": "RFX Submission Evaluation Agent",
+      "description": "Analyze a vendor proposal against key RFx requirements and generate a summary.",
+      "sys_created_on": "2025-03-28 03:13:02",
+      "sys_updated_on": "2025-03-31 04:27:21",
+      "sys_scope": "33df17ef47d8ea10d93447c4416d43cd",
+      "tools": [
+        {
+          "sys_id": "60fe6fae97a0621076cf3ee8c253af62",
+          "name": "Get Vendor Response",
+          "agent_tool_m2m_config": {
+            "sys_id": "2cfe6fae97a0621076cf3ee8c253af64",
+            "inputs": [],
+            "execution_mode": "autopilot",
+            "display_output": "1",
+            "output_transformation_strategy": "paraphrase",
+            "name_in_agent": "Get Vendor Response",
+            "description_in_agent": "Gets the Vendor Response record details.  provide the vendor response sys_id"
+          }
+        },
+        {
+          "sys_id": "0d14636297a0621076cf3ee8c253affa",
+          "name": "Get RFx Request",
+          "agent_tool_m2m_config": {
+            "sys_id": "4914636297a0621076cf3ee8c253affe",
+            "inputs": [],
+            "execution_mode": "autopilot",
+            "display_output": "1",
+            "output_transformation_strategy": "paraphrase",
+            "name_in_agent": "Get RFx Request",
+            "description_in_agent": "Gets the RFx Request based in the RFx Request 'number'"
+          }
+        },
+        {
+          "sys_id": "e6e0f3329728a21076cf3ee8c253af84",
+          "name": "RFX Proposal Evaluator Tool",
+          "agent_tool_m2m_config": {
+            "sys_id": "6ee0f3329728a21076cf3ee8c253af87",
+            "inputs": [],
+            "execution_mode": "autopilot",
+            "display_output": "1",
+            "output_transformation_strategy": "paraphrase",
+            "name_in_agent": "RFX Proposal Evaluator Tool",
+            "description_in_agent": "This tool analyzes vendor proposals against RFx document to generate detailed evaluations"
+          }
+        },
+        {
+          "sys_id": "009237e297e0621076cf3ee8c253af0d",
+          "name": "Update Vendor Response with Evaluation",
+          "agent_tool_m2m_config": {
+            "sys_id": "c89237e297e0621076cf3ee8c253af0f",
+            "inputs": [],
+            "execution_mode": "autopilot",
+            "display_output": "1",
+            "output_transformation_strategy": "paraphrase",
+            "name_in_agent": "Update Vendor Response with Evaluation",
+            "description_in_agent": "Updates the vendor response record with the AI evaluation summary. Use this tool to store the evaluation results after analyzing a vendor proposal. Provide the vendor response sys_id and the evaluation summary text."
+          }
+        }
+      ]
+    },
+    "6611acb947e0e210d93447c4416d432d": {
+      "sys_id": "6611acb947e0e210d93447c4416d432d",
+      "name": "RFX Award Communication Agent",
+      "description": "Creates award and rejection communication templates.",
+      "sys_created_on": "2025-03-28 06:15:46",
+      "sys_updated_on": "2025-03-31 02:06:33",
+      "sys_scope": "33df17ef47d8ea10d93447c4416d43cd",
+      "tools": [
+        {
+          "sys_id": "6ab3cb6a97ec221076cf3ee8c253af15",
+          "name": "RFX Award Communication Tool",
+          "agent_tool_m2m_config": {
+            "sys_id": "eeb3cb6a97ec221076cf3ee8c253af17",
+            "inputs": [],
+            "execution_mode": "autopilot",
+            "display_output": "1",
+            "output_transformation_strategy": "paraphrase",
+            "name_in_agent": "RFX Award Communication Tool",
+            "description_in_agent": "Creates professional vendor notifications for both selected and unsuccessful vendors"
+          }
+        }
+      ]
+    },
+    "7bc797d147e46210d93447c4416d43ca": {
+      "sys_id": "7bc797d147e46210d93447c4416d43ca",
+      "name": "RFX Vendor Question Answerer",
+      "description": "Generates and records professional, consistent responses to vendor questions during the RFx process.",
+      "sys_created_on": "2025-03-27 06:17:23",
+      "sys_updated_on": "2025-03-28 02:21:18",
+      "sys_scope": "33df17ef47d8ea10d93447c4416d43cd",
+      "tools": [
+        {
+          "sys_id": "cd0c5f5947e46210d93447c4416d43b4",
+          "name": "RFX Update Vendor Question with Answer",
+          "agent_tool_m2m_config": {
+            "sys_id": "050c5f5947e46210d93447c4416d43b7",
+            "inputs": [],
+            "execution_mode": "autopilot",
+            "display_output": "1",
+            "output_transformation_strategy": "paraphrase",
+            "name_in_agent": "RFX Update Vendor Question with Answer",
+            "description_in_agent": "Updates the originating RFx Question record with the answer from Generate Vendor Response's response.  Give this tool the Generate Vendor Response's response along with the RFX Question's number."
+          }
+        },
+        {
+          "sys_id": "b71be3e597a4a21076cf3ee8c253af87",
+          "name": "Get Vendor Question",
+          "agent_tool_m2m_config": {
+            "sys_id": "402be3e597a4a21076cf3ee8c253af8a",
+            "inputs": [],
+            "execution_mode": "autopilot",
+            "display_output": "1",
+            "output_transformation_strategy": "paraphrase",
+            "name_in_agent": "Get Vendor Question",
+            "description_in_agent": "Provider of the Vendor's Question.  Takes the RFX Question's 'number' field as input, and outputs the vendor question."
+          }
+        },
+        {
+          "sys_id": "52c75f2d9724a21076cf3ee8c253af65",
+          "name": "RFX AI Generated Answer for Vendor",
+          "agent_tool_m2m_config": {
+            "sys_id": "52c7176d9724a21076cf3ee8c253af5b",
+            "inputs": [],
+            "execution_mode": "autopilot",
+            "display_output": "1",
+            "output_transformation_strategy": "paraphrase",
+            "name_in_agent": "RFX AI Generated Answer for Vendor",
+            "description_in_agent": "Provide this tool with the RFX details along with the vendor's question and it will give you back an answer as a response."
+          }
+        }
+      ]
+    },
+    "9337b6dd47e06210d93447c4416d43e1": {
+      "sys_id": "9337b6dd47e06210d93447c4416d43e1",
+      "name": "RFX Record Updater",
+      "description": "Specialized agent that stores HTML documents in RFX records",
+      "sys_created_on": "2025-03-27 03:55:32",
+      "sys_updated_on": "2025-03-27 05:41:46",
+      "sys_scope": "33df17ef47d8ea10d93447c4416d43cd",
+      "tools": [
+        {
+          "sys_id": "50f7fedd47e06210d93447c4416d435e",
+          "name": "Update RFx Request",
+          "agent_tool_m2m_config": {
+            "sys_id": "d4f7fedd47e06210d93447c4416d4360",
+            "inputs": [],
+            "execution_mode": "autopilot",
+            "display_output": "1",
+            "output_transformation_strategy": "paraphrase",
+            "name_in_agent": "Update RFx Request",
+            "description_in_agent": "Updates the RFx request record with the generated document content. Use this tool after generating a document to save the COMPLETE document text to the RFx record's generated_document field. You must provide both the rfx_number and the ENTIRE unmodified generated_document_content. Do not abbreviate, summarize, or modify the document content in any way.\n\nCRITICAL: The full HTML content must be preserved exactly as received from the Create RFX Document tool. Any summarization will cause data loss."
+          }
+        }
+      ]
+    },
+    "93d1eafe9720a21076cf3ee8c253af4d": {
+      "sys_id": "93d1eafe9720a21076cf3ee8c253af4d",
+      "name": "RFX Evaluation Complete",
+      "description": "Mark Evaluation as Complete",
+      "sys_created_on": "2025-03-31 18:13:06",
+      "sys_updated_on": "2025-03-31 18:13:06",
+      "sys_scope": "33df17ef47d8ea10d93447c4416d43cd",
+      "tools": []
+    },
+    "943660d947a42210d93447c4416d43c5": {
+      "sys_id": "943660d947a42210d93447c4416d43c5",
+      "name": "RFX Requirements Collector",
+      "description": "Specialized agent that collects and organizes all required information for new RFX requests",
+      "sys_created_on": "2025-03-26 17:23:03",
+      "sys_updated_on": "2025-03-31 16:15:58",
+      "sys_scope": "33df17ef47d8ea10d93447c4416d43cd",
+      "tools": [
+        {
+          "sys_id": "9b8ce81547e42210d93447c4416d437b",
+          "name": "Create RFx Request",
+          "agent_tool_m2m_config": {
+            "sys_id": "178ce81547e42210d93447c4416d437e",
+            "inputs": [],
+            "execution_mode": "autopilot",
+            "display_output": "1",
+            "output_transformation_strategy": "paraphrase",
+            "name_in_agent": "Create RFx Request",
+            "description_in_agent": "If not RFX Record s found, this tool creates a new RFX request record in the system with the information collected from the user. Use this tool when a user initiates a new RFX request and you have not retrieved any RFX Request records. This tool creates the foundational record that will be used throughout the RFX process."
+          }
+        },
+        {
+          "sys_id": "9b8ce81547e42210d93447c4416d4382",
+          "name": "Update RFx Request",
+          "agent_tool_m2m_config": {
+            "sys_id": "9f8c205547e42210d93447c4416d43b7",
+            "inputs": [],
+            "execution_mode": "autopilot",
+            "display_output": "1",
+            "output_transformation_strategy": "paraphrase",
+            "name_in_agent": "Update RFx Request",
+            "description_in_agent": "Updates an existing RFX request with modified or additional information. Use this tool when changes need to be made to an existing request, such as adding missing information or making corrections based on validation feedback."
+          }
+        }
+      ]
+    },
+    "a38753d147e46210d93447c4416d432e": {
+      "sys_id": "a38753d147e46210d93447c4416d432e",
+      "name": "RFx Vendor Question Pre-Processor",
+      "description": "Processes vendor questions regarding RFx documents, categorizing them and preparing them for response generation.",
+      "sys_created_on": "2025-03-27 06:16:15",
+      "sys_updated_on": "2025-03-28 02:01:05",
+      "sys_scope": "33df17ef47d8ea10d93447c4416d43cd",
+      "tools": [
+        {
+          "sys_id": "ad40022197ac621076cf3ee8c253af65",
+          "name": "Get RFX Request via Vendor Question",
+          "agent_tool_m2m_config": {
+            "sys_id": "35404a2197ac621076cf3ee8c253af27",
+            "inputs": [],
+            "execution_mode": "autopilot",
+            "display_output": "1",
+            "output_transformation_strategy": "paraphrase",
+            "name_in_agent": "Get RFX Request via Vendor Question",
+            "description_in_agent": "Provide this tool with the RFX Question 'number' and it will output details of the parent RFX Request record along with the RFX Vendor question.   It's VERY IMPORTANT that you keep the rfx details and vendor question in memory."
+          }
+        }
+      ]
+    },
+    "a64f143947e0e210d93447c4416d432c": {
+      "sys_id": "a64f143947e0e210d93447c4416d432c",
+      "name": "RFX Scoring Coordinator",
+      "description": "Consolidate evaluation summaries and assign a preliminary qualitative score.",
+      "sys_created_on": "2025-03-28 06:08:10",
+      "sys_updated_on": "2025-03-31 02:04:37",
+      "sys_scope": "33df17ef47d8ea10d93447c4416d43cd",
+      "tools": [
+        {
+          "sys_id": "76c67b6a97e0621076cf3ee8c253afe5",
+          "name": "Get Vendor Response Evaluation",
+          "agent_tool_m2m_config": {
+            "sys_id": "32c633aa97e0621076cf3ee8c253af20",
+            "inputs": [],
+            "execution_mode": "autopilot",
+            "display_output": "1",
+            "output_transformation_strategy": "paraphrase",
+            "name_in_agent": "Get Vendor Response Evaluation",
+            "description_in_agent": "Retrieves the evaluation summary for a specific vendor response. Use this tool to access the AI-generated analysis of a vendor proposal that was created during the evaluation phase. This tool returns the vendor name, AI summary, and current evaluation score."
+          }
+        },
+        {
+          "sys_id": "2d33036a97ec221076cf3ee8c253afdd",
+          "name": "RFX Score Standardizer Tool",
+          "agent_tool_m2m_config": {
+            "sys_id": "a133036a97ec221076cf3ee8c253afe0",
+            "inputs": [],
+            "execution_mode": "autopilot",
+            "display_output": "1",
+            "output_transformation_strategy": "paraphrase",
+            "name_in_agent": "RFX Score Standardizer Tool",
+            "description_in_agent": "Standardizes evaluation scores for consistency across vendor proposals"
+          }
+        }
+      ]
+    },
+    "b011ffad97a4a21076cf3ee8c253afaa": {
+      "sys_id": "b011ffad97a4a21076cf3ee8c253afaa",
+      "name": "RFX Submission Intake Agent",
+      "description": "Receive and validate vendor proposal submissions linked to an RFx.",
+      "sys_created_on": "2025-03-28 02:47:34",
+      "sys_updated_on": "2025-03-31 05:21:19",
+      "sys_scope": "33df17ef47d8ea10d93447c4416d43cd",
+      "tools": [
+        {
+          "sys_id": "9463b3a197e4a21076cf3ee8c253afd8",
+          "name": "Receive and Validate Proposal",
+          "agent_tool_m2m_config": {
+            "sys_id": "5463b3a197e4a21076cf3ee8c253afdb",
+            "inputs": [],
+            "execution_mode": "autopilot",
+            "display_output": "1",
+            "output_transformation_strategy": "paraphrase",
+            "name_in_agent": "Receive and Validate Proposal",
+            "description_in_agent": "Receive and validate rfx request based on 'number' field, and sets status to 'evaluate'"
+          }
+        }
+      ]
+    },
+    "c12f605947e42210d93447c4416d43b8": {
+      "sys_id": "c12f605947e42210d93447c4416d43b8",
+      "name": "RFX Approval Coordinator",
+      "description": "Specialized agent that manages the approval workflow for validated RFX requests",
+      "sys_created_on": "2025-03-26 18:03:41",
+      "sys_updated_on": "2025-03-31 16:52:14",
+      "sys_scope": "33df17ef47d8ea10d93447c4416d43cd",
+      "tools": [
+        {
+          "sys_id": "bb94345147282210d93447c4416d43f0",
+          "name": "Create Approval Workflow",
+          "agent_tool_m2m_config": {
+            "sys_id": "3394b85147282210d93447c4416d430d",
+            "inputs": [],
+            "execution_mode": "autopilot",
+            "display_output": "1",
+            "output_transformation_strategy": "paraphrase",
+            "name_in_agent": "Create Approval Workflow",
+            "description_in_agent": "Runs an approval workflow for RFX requests. Use this tool when an RFX request has been validated and is ready for the approval process. The tool automatically routes the request to appropriate stakeholders for approval/rejection and updates the record's approval status."
+          }
+        },
+        {
+          "sys_id": "2f94345147282210d93447c4416d43e9",
+          "name": "Get RFx Request",
+          "agent_tool_m2m_config": {
+            "sys_id": "fb94345147282210d93447c4416d43ec",
+            "inputs": [],
+            "execution_mode": "autopilot",
+            "display_output": "1",
+            "output_transformation_strategy": "paraphrase",
+            "name_in_agent": "Get RFx Request",
+            "description_in_agent": "Get RFx Request"
+          }
+        }
+      ]
+    },
+    "cf606c7947e0e210d93447c4416d43da": {
+      "sys_id": "cf606c7947e0e210d93447c4416d43da",
+      "name": "RFX Vendor Comparison Agent",
+      "description": "Analyzes and compares top-performing vendor proposals based on evaluation summaries to support the vendor selection process.",
+      "sys_created_on": "2025-03-28 06:13:47",
+      "sys_updated_on": "2025-03-31 07:00:17",
+      "sys_scope": "33df17ef47d8ea10d93447c4416d43cd",
+      "tools": [
+        {
+          "sys_id": "a873c36a97ec221076cf3ee8c253af08",
+          "name": "RFX Vendor Comparison Tool",
+          "agent_tool_m2m_config": {
+            "sys_id": "2073c36a97ec221076cf3ee8c253af0b",
+            "inputs": [],
+            "execution_mode": "autopilot",
+            "display_output": "1",
+            "output_transformation_strategy": "paraphrase",
+            "name_in_agent": "RFX Vendor Comparison Tool",
+            "description_in_agent": "Compares key aspects of top-scoring vendor proposals"
+          }
+        },
+        {
+          "sys_id": "26d21cbe9764621076cf3ee8c253af3e",
+          "name": "Get Top Vendor Responses",
+          "agent_tool_m2m_config": {
+            "sys_id": "6ad21cbe9764621076cf3ee8c253af40",
+            "inputs": [],
+            "execution_mode": "autopilot",
+            "display_output": "1",
+            "output_transformation_strategy": "paraphrase",
+            "name_in_agent": "Get Top Vendor Responses",
+            "description_in_agent": "Retrieves the top vendor responses for an RFx based on evaluation scores. This tool finds all vendor submissions for the specified RFx request number, sorts them by evaluation score in descending order, and returns the highest-scoring vendor responses for comparison. Use this to identify the top candidates for final vendor selection."
+          }
+        },
+        {
+          "sys_id": "b9cdf3e29724621076cf3ee8c253af5f",
+          "name": "Store Comparison Results",
+          "agent_tool_m2m_config": {
+            "sys_id": "b9cdffe29724621076cf3ee8c253afac",
+            "inputs": [],
+            "execution_mode": "autopilot",
+            "display_output": "1",
+            "output_transformation_strategy": "paraphrase",
+            "name_in_agent": "Store Comparison Results",
+            "description_in_agent": "Stores the vendor comparison summary on the RFx Request record. Use this tool after generating a comparison of the top vendors to save the results for future reference and decision-making. This ensures that the detailed vendor comparison is captured in the system and available for final selection justification."
+          }
+        }
+      ]
+    },
+    "e5f37a9947e06210d93447c4416d43f3": {
+      "sys_id": "e5f37a9947e06210d93447c4416d43f3",
+      "name": "RFX Document Creator",
+      "description": "Specialized agent that generates RFX document content in markdown format and saves it to the RFX Request record",
+      "sys_created_on": "2025-03-27 03:43:13",
+      "sys_updated_on": "2025-03-31 21:40:29",
+      "sys_scope": "33df17ef47d8ea10d93447c4416d43cd",
+      "tools": [
+        {
+          "sys_id": "6c9457ba9764a21076cf3ee8c253aff4",
+          "name": "RFX Document Generator",
+          "agent_tool_m2m_config": {
+            "sys_id": "289457ba9764a21076cf3ee8c253aff7",
+            "inputs": [],
+            "execution_mode": "autopilot",
+            "display_output": "1",
+            "output_transformation_strategy": "paraphrase",
+            "name_in_agent": "RFX Document Generator",
+            "description_in_agent": "Use this tool generate the RFX document content. Provide the tool with the following inputs: - RFX Type - RFX Number - Submission Deadline - Expected Delivery Date - Budget Range - Requirements - Request Status - Approval Status."
+          }
+        },
+        {
+          "sys_id": "e1a1179947a46210d93447c4416d4324",
+          "name": "Update RFx Request",
+          "agent_tool_m2m_config": {
+            "sys_id": "a5a1179947a46210d93447c4416d4327",
+            "inputs": [],
+            "execution_mode": "autopilot",
+            "display_output": "1",
+            "output_transformation_strategy": "paraphrase",
+            "name_in_agent": "Update RFx Request",
+            "description_in_agent": "Updates the RFx request with the RFX generated document."
+          }
+        }
+      ]
+    }
+  },
+  "tools": {
+    "009237e297e0621076cf3ee8c253af0d": {
+      "sys_id": "009237e297e0621076cf3ee8c253af0d",
+      "name": "Update Vendor Response with Evaluation",
+      "description": "Updates the vendor response record with the AI evaluation summary. Use this tool to store the evaluation results after analyzing a vendor proposal. Provide the vendor response sys_id and the evaluation summary text.",
+      "active": "1",
+      "type": "subflow",
+      "input_schema": "[]",
+      "script": "undefined",
+      "target_details_ref": null
+    },
+    "0d14636297a0621076cf3ee8c253affa": {
+      "sys_id": "0d14636297a0621076cf3ee8c253affa",
+      "name": "Get RFx Request",
+      "description": "Gets the RFx Request based in the RFx Request 'number'",
+      "active": "1",
+      "type": "subflow",
+      "input_schema": "[]",
+      "script": "undefined",
+      "target_details_ref": null
+    },
+    "24be241947e42210d93447c4416d43e7": {
+      "sys_id": "24be241947e42210d93447c4416d43e7",
+      "name": "Get RFX Request",
+      "description": "Retrieves RFX Request record details, including: number, type, short description, status, budget range, requirements",
+      "active": "1",
+      "type": "subflow",
+      "input_schema": "[]",
+      "script": "undefined",
+      "target_details_ref": null
+    },
+    "26d21cbe9764621076cf3ee8c253af3e": {
+      "sys_id": "26d21cbe9764621076cf3ee8c253af3e",
+      "name": "Get Top Vendor Responses",
+      "description": "Retrieves the top vendor responses for an RFx based on evaluation scores. This tool finds all vendor submissions for the specified RFx request number, sorts them by evaluation score in descending order, and returns the highest-scoring vendor responses for comparison. Use this to identify the top candidates for final vendor selection.",
+      "active": "1",
+      "type": "subflow",
+      "input_schema": "[]",
+      "script": "(function(inputs) {\n    // Only string inputs are allowed\n    // return outputs object where the keys in it are understandable by LLM\n    \n    try {\n        var rfxNumber = inputs.rfx_number || '';\n        var vendorResponses = [];\n        \n        // Query the vendor responses table\n        var gr = new GlideRecord('x_nowge_rfx_ai_vendor_response');\n        \n        // Filter by RFx request number\n        if (rfxNumber) {\n            gr.addQuery('rfx_request.number', rfxNumber);\n        }\n        \n        // Sort by evaluation score (descending)\n        gr.orderByDesc('evaluation_score');\n        \n        // Limit to top 2 vendors\n        gr.setLimit(2);\n        gr.query();\n        \n        // Process results\n        while (gr.next()) {\n            vendorResponses.push({\n                sys_id: gr.getUniqueValue(),\n                vendor_name: gr.getValue('vendor_name') || 'Unnamed Vendor',\n                score: gr.getValue('evaluation_score') || '0',\n                summary: gr.getValue('evaluation_summary') || 'No evaluation summary available'\n            });\n        }\n        \n        // If no vendors found, provide fallback data for demo\n        if (vendorResponses.length === 0) {\n            vendorResponses = [\n                {\n                    sys_id: 'vendor1_demo',\n                    vendor_name: 'TechLearn Solutions',\n                    score: '85',\n                    summary: 'Strong technical approach with innovative accessibility features. Comprehensive curriculum alignment and excellent support options. Pricing is competitive but implementation timeline is longer than other vendors.'\n                },\n                {\n                    sys_id: 'vendor2_demo',\n                    vendor_name: 'EduSoft Systems',\n                    score: '78',\n                    summary: 'Good overall solution with standard accessibility features. Curriculum alignment is adequate but requires some customization. Competitive pricing and shorter implementation timeline, but limited post-implementation support options.'\n                }\n            ];\n        }\n        \n        return {\n            top_vendors: vendorResponses,\n            rfx_number: rfxNumber,\n            status: 'success',\n            message: 'Retrieved top ' + vendorResponses.length + ' vendors successfully'\n        };\n    } catch (error) {\n        // Return error information\n        return {\n            status: 'error',\n            message: 'Error retrieving top vendors: ' + error.message,\n            top_vendors: []\n        };\n    }\n})(inputs);",
+      "target_details_ref": null
+    },
+    "2d33036a97ec221076cf3ee8c253afdd": {
+      "sys_id": "2d33036a97ec221076cf3ee8c253afdd",
+      "name": "RFX Score Standardizer Tool",
+      "description": "Standardizes evaluation scores for consistency across vendor proposals",
+      "active": "1",
+      "type": "capability",
+      "input_schema": "[]",
+      "script": "undefined",
+      "target_details_ref": {
+        "sys_id": "0047aee6976c221076cf3ee8c253af29",
+        "name": "RFX Score Standardizer Skill",
+        "type": "sys_one_extend_capability"
+      }
+    },
+    "2f94345147282210d93447c4416d43e9": {
+      "sys_id": "2f94345147282210d93447c4416d43e9",
+      "name": "Get RFx Request",
+      "description": "Get RFx Request",
+      "active": "1",
+      "type": "subflow",
+      "input_schema": "[]",
+      "script": "undefined",
+      "target_details_ref": null
+    },
+    "50f7fedd47e06210d93447c4416d435e": {
+      "sys_id": "50f7fedd47e06210d93447c4416d435e",
+      "name": "Update RFx Request",
+      "description": "Updates the RFx request record with the generated document content. Use this tool after generating a document to save the COMPLETE document text to the RFx record's generated_document field. You must provide both the rfx_number and the ENTIRE unmodified generated_document_content. Do not abbreviate, summarize, or modify the document content in any way.\n\nCRITICAL: The full HTML content must be preserved exactly as received from the Create RFX Document tool. Any summarization will cause data loss.",
+      "active": "1",
+      "type": "subflow",
+      "input_schema": "[]",
+      "script": "undefined",
+      "target_details_ref": null
+    },
+    "52c75f2d9724a21076cf3ee8c253af65": {
+      "sys_id": "52c75f2d9724a21076cf3ee8c253af65",
+      "name": "RFX AI Generated Answer for Vendor",
+      "description": "Provide this tool with the RFX details along with the vendor's question and it will give you back an answer as a response.",
+      "active": "1",
+      "type": "capability",
+      "input_schema": "[]",
+      "script": "undefined",
+      "target_details_ref": {
+        "sys_id": "73e617e99724a21076cf3ee8c253af30",
+        "name": "RFX AI Generated Answer for Vendor",
+        "type": "sys_one_extend_capability"
+      }
+    },
+    "5f5fae9147e06210d93447c4416d4397": {
+      "sys_id": "5f5fae9147e06210d93447c4416d4397",
+      "name": "Get Approved RFX Details",
+      "description": "This tool retrieves comprehensive information about an RFX request.  Provide it with the RFX Request number. The output will be structured data that can be processed by other agents or tools.  RFX details include: Budget Range, Expected Delivery Date, Submission Deadline, Short Description, Requirements, Type, Requirements, Number, Approval Status",
+      "active": "1",
+      "type": "subflow",
+      "input_schema": "[]",
+      "script": "undefined",
+      "target_details_ref": null
+    },
+    "60fe6fae97a0621076cf3ee8c253af62": {
+      "sys_id": "60fe6fae97a0621076cf3ee8c253af62",
+      "name": "Get Vendor Response",
+      "description": "Gets the Vendor Response record details.  provide the vendor response sys_id",
+      "active": "1",
+      "type": "subflow",
+      "input_schema": "[]",
+      "script": "undefined",
+      "target_details_ref": null
+    },
+    "6ab3cb6a97ec221076cf3ee8c253af15": {
+      "sys_id": "6ab3cb6a97ec221076cf3ee8c253af15",
+      "name": "RFX Award Communication Tool",
+      "description": "Creates professional vendor notifications for both selected and unsuccessful vendors",
+      "active": "1",
+      "type": "capability",
+      "input_schema": "[]",
+      "script": "undefined",
+      "target_details_ref": {
+        "sys_id": "d76a36ae97ac221076cf3ee8c253af1b",
+        "name": "RFX Award Communication Generator Skill",
+        "type": "sys_one_extend_capability"
+      }
+    },
+    "6c9457ba9764a21076cf3ee8c253aff4": {
+      "sys_id": "6c9457ba9764a21076cf3ee8c253aff4",
+      "name": "RFX Document Generator",
+      "description": "Use this tool generate the RFX document content. Provide the tool with the following inputs: - RFX Type - RFX Number - Submission Deadline - Expected Delivery Date - Budget Range - Requirements - Request Status - Approval Status.",
+      "active": "1",
+      "type": "capability",
+      "input_schema": "[]",
+      "script": "undefined",
+      "target_details_ref": {
+        "sys_id": "b80ec09547242210d93447c4416d4364",
+        "name": "RFX Writer",
+        "type": "sys_one_extend_capability"
+      }
+    },
+    "76c67b6a97e0621076cf3ee8c253afe5": {
+      "sys_id": "76c67b6a97e0621076cf3ee8c253afe5",
+      "name": "Get Vendor Response Evaluation",
+      "description": "Retrieves the evaluation summary for a specific vendor response. Use this tool to access the AI-generated analysis of a vendor proposal that was created during the evaluation phase. This tool returns the vendor name, AI summary, and current evaluation score.",
+      "active": "1",
+      "type": "subflow",
+      "input_schema": "[]",
+      "script": "undefined",
+      "target_details_ref": null
+    },
+    "9463b3a197e4a21076cf3ee8c253afd8": {
+      "sys_id": "9463b3a197e4a21076cf3ee8c253afd8",
+      "name": "Receive and Validate Proposal",
+      "description": "Receive and validate rfx request based on 'number' field, and sets status to 'evaluate'",
+      "active": "1",
+      "type": "subflow",
+      "input_schema": "[]",
+      "script": "undefined",
+      "target_details_ref": null
+    },
+    "9b8ce81547e42210d93447c4416d437b": {
+      "sys_id": "9b8ce81547e42210d93447c4416d437b",
+      "name": "Create RFx Request",
+      "description": "If not RFX Record s found, this tool creates a new RFX request record in the system with the information collected from the user. Use this tool when a user initiates a new RFX request and you have not retrieved any RFX Request records. This tool creates the foundational record that will be used throughout the RFX process.",
+      "active": "1",
+      "type": "subflow",
+      "input_schema": "[]",
+      "script": "undefined",
+      "target_details_ref": null
+    },
+    "9b8ce81547e42210d93447c4416d4382": {
+      "sys_id": "9b8ce81547e42210d93447c4416d4382",
+      "name": "Update RFx Request",
+      "description": "Updates an existing RFX request with modified or additional information. Use this tool when changes need to be made to an existing request, such as adding missing information or making corrections based on validation feedback.",
+      "active": "1",
+      "type": "subflow",
+      "input_schema": "[]",
+      "script": null,
+      "target_details_ref": null
+    },
+    "a873c36a97ec221076cf3ee8c253af08": {
+      "sys_id": "a873c36a97ec221076cf3ee8c253af08",
+      "name": "RFX Vendor Comparison Tool",
+      "description": "Compares key aspects of top-scoring vendor proposals",
+      "active": "1",
+      "type": "capability",
+      "input_schema": "[]",
+      "script": "undefined",
+      "target_details_ref": {
+        "sys_id": "8da6366a97ac221076cf3ee8c253afe5",
+        "name": "RFX Vendor Comparison Generator Skill",
+        "type": "sys_one_extend_capability"
+      }
+    },
+    "ad40022197ac621076cf3ee8c253af65": {
+      "sys_id": "ad40022197ac621076cf3ee8c253af65",
+      "name": "Get RFX Request via Vendor Question",
+      "description": "Provide this tool with the RFX Question 'number' and it will output details of the parent RFX Request record along with the RFX Vendor question.   It's VERY IMPORTANT that you keep the rfx details and vendor question in memory.",
+      "active": "1",
+      "type": "subflow",
+      "input_schema": "[]",
+      "script": "undefined",
+      "target_details_ref": null
+    },
+    "b71be3e597a4a21076cf3ee8c253af87": {
+      "sys_id": "b71be3e597a4a21076cf3ee8c253af87",
+      "name": "Get Vendor Question",
+      "description": "Provider of the Vendor's Question.  Takes the RFX Question's 'number' field as input, and outputs the vendor question.",
+      "active": "1",
+      "type": "subflow",
+      "input_schema": "[]",
+      "script": "undefined",
+      "target_details_ref": null
+    },
+    "b9cdf3e29724621076cf3ee8c253af5f": {
+      "sys_id": "b9cdf3e29724621076cf3ee8c253af5f",
+      "name": "Store Comparison Results",
+      "description": "Stores the vendor comparison summary on the RFx Request record. Use this tool after generating a comparison of the top vendors to save the results for future reference and decision-making. This ensures that the detailed vendor comparison is captured in the system and available for final selection justification.",
+      "active": "1",
+      "type": "subflow",
+      "input_schema": "[]",
+      "script": "undefined",
+      "target_details_ref": null
+    },
+    "bb94345147282210d93447c4416d43f0": {
+      "sys_id": "bb94345147282210d93447c4416d43f0",
+      "name": "Create Approval Workflow",
+      "description": "Runs an approval workflow for RFX requests. Use this tool when an RFX request has been validated and is ready for the approval process. The tool automatically routes the request to appropriate stakeholders for approval/rejection and updates the record's approval status.",
+      "active": "1",
+      "type": "subflow",
+      "input_schema": "[]",
+      "script": "undefined",
+      "target_details_ref": null
+    },
+    "cd0c5f5947e46210d93447c4416d43b4": {
+      "sys_id": "cd0c5f5947e46210d93447c4416d43b4",
+      "name": "RFX Update Vendor Question with Answer",
+      "description": "Updates the originating RFx Question record with the answer from Generate Vendor Response's response.  Give this tool the Generate Vendor Response's response along with the RFX Question's number.",
+      "active": "1",
+      "type": "subflow",
+      "input_schema": "[]",
+      "script": "undefined",
+      "target_details_ref": null
+    },
+    "da930b6a97ec221076cf3ee8c253af23": {
+      "sys_id": "da930b6a97ec221076cf3ee8c253af23",
+      "name": "RFX Selection Justification Tool",
+      "description": "Creates a clear, objective justification for the final vendor selection",
+      "active": "1",
+      "type": "capability",
+      "input_schema": "[]",
+      "script": "undefined",
+      "target_details_ref": {
+        "sys_id": "ac883eea97ac221076cf3ee8c253affe",
+        "name": "RFX Selection Justification Writer",
+        "type": "sys_one_extend_capability"
+      }
+    },
+    "e0be241947e42210d93447c4416d43ee": {
+      "sys_id": "e0be241947e42210d93447c4416d43ee",
+      "name": "Validate RFX Request",
+      "description": "Validates an RFX request against organizational policies and standards, checking for completeness, compliance, and adherence to best practices. Use this tool after all information has been collected to ensure the request meets requirements before routing for approval.",
+      "active": "1",
+      "type": "subflow",
+      "input_schema": "[]",
+      "script": "undefined",
+      "target_details_ref": null
+    },
+    "e1a1179947a46210d93447c4416d4324": {
+      "sys_id": "e1a1179947a46210d93447c4416d4324",
+      "name": "Update RFx Request",
+      "description": "Updates the RFx request with the RFX generated document.",
+      "active": "1",
+      "type": "subflow",
+      "input_schema": "[]",
+      "script": "undefined",
+      "target_details_ref": null
+    },
+    "e4bea41947e42210d93447c4416d438e": {
+      "sys_id": "e4bea41947e42210d93447c4416d438e",
+      "name": "Update RFX Status",
+      "description": "Updates an existing RFX request with modified or additional information. Use this tool when changes need to be made to an existing request, such as adding missing information or making corrections based on validation feedback.",
+      "active": "1",
+      "type": "subflow",
+      "input_schema": "[]",
+      "script": "undefined",
+      "target_details_ref": null
+    },
+    "e6e0f3329728a21076cf3ee8c253af84": {
+      "sys_id": "e6e0f3329728a21076cf3ee8c253af84",
+      "name": "RFX Proposal Evaluator Tool",
+      "description": "This tool analyzes vendor proposals against RFx document to generate detailed evaluations",
+      "active": "1",
+      "type": "capability",
+      "input_schema": "[]",
+      "script": "undefined",
+      "target_details_ref": {
+        "sys_id": "bbb5ae66976c221076cf3ee8c253afd6",
+        "name": "RFX Proposal Evaluator Skill",
+        "type": "sys_one_extend_capability"
+      }
+    }
+  },
+  "capabilities": {
+    "0047aee6976c221076cf3ee8c253af29": {
+      "sys_id": "0047aee6976c221076cf3ee8c253af29",
+      "name": "RFX Score Standardizer Skill",
+      "description": "Standardizes evaluation scores for consistency across vendor proposals",
+      "active": "1",
+      "type": "skill",
+      "short_description": null,
+      "capability_definition": {
+        "sys_id": "8047622a976c221076cf3ee8c253af01",
+        "name": "RFX Score Standardizer Skill",
+        "description": null,
+        "api": "936e514a53b3b110f028ddeeff7b128c",
+        "api_type": "sys_hub_flow",
+        "preprocessor": "(function(inputs) {     \r\t/* write code here to transform capability input to definition input.*/     \r\t     \r\tinputs = JSON.parse(inputs);     \r\t     \r\treturn inputs;     \r})(inputs);\r",
+        "postprocessor": "(function(outputs) {     \r\t/* write code here to transform definition output to capability output.*/     \r\t     \r\toutputs = JSON.parse(outputs);     \r\t     \r\treturn outputs;     \r})(outputs);\r"
+      },
+      "genai_config_ref": {
+        "sys_id": "c847622a976c221076cf3ee8c253af08",
+        "name": "Prompt name"
+      }
+    },
+    "73e617e99724a21076cf3ee8c253af30": {
+      "sys_id": "73e617e99724a21076cf3ee8c253af30",
+      "name": "RFX AI Generated Answer for Vendor",
+      "description": "Generate and answer to the vendor's question",
+      "active": "1",
+      "type": "skill",
+      "short_description": null,
+      "capability_definition": {
+        "sys_id": "b7e6d32d9724a21076cf3ee8c253af3e",
+        "name": "RFX AI Generated Answer for Vendor",
+        "description": null,
+        "api": "3b6a84c4878621104f1c8f59dabb3525",
+        "api_type": "sys_hub_flow",
+        "preprocessor": "(function(inputs) {     \r\t/* write code here to transform capability input to definition input.*/     \r\t     \r\tinputs = JSON.parse(inputs);     \r\t     \r\treturn inputs;     \r})(inputs);\r",
+        "postprocessor": "(function(outputs) {     \r\t/* write code here to transform definition output to capability output.*/     \r\t     \r\toutputs = JSON.parse(outputs);     \r\t     \r\treturn outputs;     \r})(outputs);\r"
+      },
+      "genai_config_ref": {
+        "sys_id": "3e36ab2197a4a21076cf3ee8c253af9b",
+        "name": "Prompt name"
+      }
+    },
+    "8da6366a97ac221076cf3ee8c253afe5": {
+      "sys_id": "8da6366a97ac221076cf3ee8c253afe5",
+      "name": "RFX Vendor Comparison Generator Skill",
+      "description": "A procurement analyst tasked with comparing two finalist vendor proposals side-by-side to help the selection committee make a final decision.",
+      "active": "1",
+      "type": "skill",
+      "short_description": "A procurement analyst tasked with comparing two finalist vendor proposals side-by-side to help the selection committee make a final decision.\n",
+      "capability_definition": {
+        "sys_id": "0ff736ea97ac221076cf3ee8c253afac",
+        "name": "751378",
+        "description": null,
+        "api": "3b6a84c4878621104f1c8f59dabb3525",
+        "api_type": "sys_hub_flow",
+        "preprocessor": "(function(inputs) {     \r\t/* write code here to transform capability input to definition input.*/     \r\t     \r\tinputs = JSON.parse(inputs);     \r\t     \r\treturn inputs;     \r})(inputs);\r",
+        "postprocessor": "(function(outputs) {     \r\t/* write code here to transform definition output to capability output.*/     \r\t     \r\toutputs = JSON.parse(outputs);     \r\t     \r\treturn outputs;     \r})(outputs);\r"
+      },
+      "genai_config_ref": {
+        "sys_id": "0bf7b6ea97ac221076cf3ee8c253af4c",
+        "name": "OpenAIprompt"
+      }
+    },
+    "ac883eea97ac221076cf3ee8c253affe": {
+      "sys_id": "ac883eea97ac221076cf3ee8c253affe",
+      "name": "RFX Selection Justification Writer",
+      "description": "A procurement decision support specialist tasked with creating a clear, objective justification for the final vendor selection.\n",
+      "active": "1",
+      "type": "skill",
+      "short_description": null,
+      "capability_definition": {
+        "sys_id": "e8887eea97ac221076cf3ee8c253af05",
+        "name": "Selection Justification Writer",
+        "description": null,
+        "api": "936e514a53b3b110f028ddeeff7b128c",
+        "api_type": "sys_hub_flow",
+        "preprocessor": "(function(inputs) {     \r\t/* write code here to transform capability input to definition input.*/     \r\t     \r\tinputs = JSON.parse(inputs);     \r\t     \r\treturn inputs;     \r})(inputs);\r",
+        "postprocessor": "(function(outputs) {     \r\t/* write code here to transform definition output to capability output.*/     \r\t     \r\toutputs = JSON.parse(outputs);     \r\t     \r\treturn outputs;     \r})(outputs);\r"
+      },
+      "genai_config_ref": {
+        "sys_id": "2888322e97ac221076cf3ee8c253afbe",
+        "name": "Prompt name"
+      }
+    },
+    "b80ec09547242210d93447c4416d4364": {
+      "sys_id": "b80ec09547242210d93447c4416d4364",
+      "name": "RFX Writer",
+      "description": "Writes RFX documents based on RFX request details as input.",
+      "active": "1",
+      "type": "skill",
+      "short_description": null,
+      "capability_definition": {
+        "sys_id": "b00e089547242210d93447c4416d43bb",
+        "name": "RFX Writer",
+        "description": null,
+        "api": "3b6a84c4878621104f1c8f59dabb3525",
+        "api_type": "sys_hub_flow",
+        "preprocessor": "(function(inputs) {     \r\t/* write code here to transform capability input to definition input.*/     \r\t     \r\tinputs = JSON.parse(inputs);     \r\t     \r\treturn inputs;     \r})(inputs);\r",
+        "postprocessor": "(function(outputs) {     \r\t/* write code here to transform definition output to capability output.*/     \r\t     \r\toutputs = JSON.parse(outputs);     \r\t     \r\treturn outputs;     \r})(outputs);\r"
+      },
+      "genai_config_ref": {
+        "sys_id": "ddec061a9768661076cf3ee8c253af09",
+        "name": "Prompt name"
+      }
+    },
+    "bbb5ae66976c221076cf3ee8c253afd6": {
+      "sys_id": "bbb5ae66976c221076cf3ee8c253afd6",
+      "name": "RFX Proposal Evaluator Skill",
+      "description": "Analyzes vendor proposals against RFx requirements to generate detailed evaluations",
+      "active": "1",
+      "type": "skill",
+      "short_description": "A procurement evaluation specialist analyzing vendor proposals against RFP requirements.",
+      "capability_definition": {
+        "sys_id": "c4c562a6976c221076cf3ee8c253af74",
+        "name": "Proposal Evaluator Skill",
+        "description": null,
+        "api": "3b6a84c4878621104f1c8f59dabb3525",
+        "api_type": "sys_hub_flow",
+        "preprocessor": "(function(inputs) {     \r\t/* write code here to transform capability input to definition input.*/     \r\t     \r\tinputs = JSON.parse(inputs);     \r\t     \r\treturn inputs;     \r})(inputs);\r",
+        "postprocessor": "(function(outputs) {     \r\t/* write code here to transform definition output to capability output.*/     \r\t     \r\toutputs = JSON.parse(outputs);     \r\t     \r\treturn outputs;     \r})(outputs);\r"
+      },
+      "genai_config_ref": {
+        "sys_id": "f5703bfe97e4a21076cf3ee8c253afec",
+        "name": "Prompt name"
+      }
+    },
+    "d76a36ae97ac221076cf3ee8c253af1b": {
+      "sys_id": "d76a36ae97ac221076cf3ee8c253af1b",
+      "name": "RFX Award Communication Generator Skill",
+      "description": "A procurement communications specialist tasked with creating professional vendor notifications for both the selected vendor and unsuccessful vendors.\n",
+      "active": "1",
+      "type": "skill",
+      "short_description": null,
+      "capability_definition": {
+        "sys_id": "d36a36ae97ac221076cf3ee8c253af22",
+        "name": "RFX Award Communication Generator Skill",
+        "description": null,
+        "api": "936e514a53b3b110f028ddeeff7b128c",
+        "api_type": "sys_hub_flow",
+        "preprocessor": "(function(inputs) {     \r\t/* write code here to transform capability input to definition input.*/     \r\t     \r\tinputs = JSON.parse(inputs);     \r\t     \r\treturn inputs;     \r})(inputs);\r",
+        "postprocessor": "(function(outputs) {     \r\t/* write code here to transform definition output to capability output.*/     \r\t     \r\toutputs = JSON.parse(outputs);     \r\t     \r\treturn outputs;     \r})(outputs);\r"
+      },
+      "genai_config_ref": {
+        "sys_id": "6b6af6ae97ac221076cf3ee8c253afce",
+        "name": "Prompt name"
+      }
+    }
+  },
+  "skills": {},
+  "genai_configs": {
+    "0bf7b6ea97ac221076cf3ee8c253af4c": {
+      "sys_id": "0bf7b6ea97ac221076cf3ee8c253af4c",
+      "name": "OpenAIprompt",
+      "active": "1",
+      "prompt": "You are a procurement analyst tasked with comparing two finalist vendor proposals side-by-side to help the selection committee make a final decision.\n\nVENDOR_A_EVALUATION:\n{{vendor_a_evaluation}}\n\nVENDOR_B_EVALUATION:\n{{vendor_b_evaluation}}\n\nCreate a comprehensive side-by-side comparison of these two vendor proposals that:\n1. Compares their performance in each evaluation category\n2. Highlights key differentiators between the vendors\n3. Identifies areas where one vendor significantly outperforms the other\n4. Notes any similar strengths or shared weaknesses\n5. Analyzes the total cost of ownership and value proposition differences\n\nFormat your response as a professional comparison report with the following structure:\n\n# Vendor Comparison Analysis: [Vendor A] vs. [Vendor B]\n\n## Executive Summary\n[Brief 2-3 sentence overview comparing the vendors and their overall scores]\n\n## Category-by-Category Comparison\n\n### 1. Compliance with Requirements (25%)\n[Vendor A]: [Score]/25 - [Brief summary]\n[Vendor B]: [Score]/25 - [Brief summary]\n**ADVANTAGE**: [Which vendor has the advantage in this category and why]\n\n### 2. Technical Capabilities (20%)\n[Vendor A]: [Score]/20 - [Brief summary]\n[Vendor B]: [Score]/20 - [Brief summary]\n**ADVANTAGE**: [Which vendor has the advantage in this category and why]\n\n### 3. Implementation & Support (15%)\n[Vendor A]: [Score]/15 - [Brief summary]\n[Vendor B]: [Score]/15 - [Brief summary]\n**ADVANTAGE**: [Which vendor has the advantage in this category and why]\n\n### 4. Security & Data Protection (15%)\n[Vendor A]: [Score]/15 - [Brief summary]\n[Vendor B]: [Score]/15 - [Brief summary]\n**ADVANTAGE**: [Which vendor has the advantage in this category and why]\n\n### 5. Cost & Value (15%)\n[Vendor A]: [Score]/15 - [Brief summary]\n[Vendor B]: [Score]/15 - [Brief summary]\n**ADVANTAGE**: [Which vendor has the advantage in this category and why]\n\n### 6. Company Experience & References (10%)\n[Vendor A]: [Score]/10 - [Brief summary]\n[Vendor B]: [Score]/10 - [Brief summary]\n**ADVANTAGE**: [Which vendor has the advantage in this category and why]\n\n## Key Differentiators\n[List 3-5 major differentiating factors between the vendors]\n\n## Risk Assessment\n[Identify key risks associated with selecting each vendor]\n\n## Value Analysis\n[Compare the value propositions of both vendors considering both cost and capabilities]\n\n## Recommendation\n[Provide a clear recommendation with justification]",
+      "model": "gpt-4",
+      "temperature": "0.2",
+      "max_tokens": "500",
+      "additional_configurations": "{\"skill_config_id\":\"99a67e6a97ac221076cf3ee8c253af40\"}",
+      "parent": null,
+      "definition": "0ff736ea97ac221076cf3ee8c253afac",
+      "definition_table": "sys_one_extend_capability_definition",
+      "prompt_inputs": [
+        "vendor_a_evaluation",
+        "vendor_b_evaluation"
+      ],
+      "additional_configurations_json": {
+        "skill_config_id": "99a67e6a97ac221076cf3ee8c253af40"
+      }
+    },
+    "2888322e97ac221076cf3ee8c253afbe": {
+      "sys_id": "2888322e97ac221076cf3ee8c253afbe",
+      "name": "Prompt name",
+      "active": "1",
+      "prompt": "You are a procurement decision support specialist tasked with creating a clear, objective justification for the final vendor selection.\n\nVENDOR_COMPARISON:\n\"# Vendor Comparison Analysis: LearnFlow Technologies vs. EduAdapt Solutions\n\n## Executive Summary\nLearnFlow Technologies and EduAdapt Solutions have been evaluated for a special education software procurement project. EduAdapt Solutions has a significantly higher overall score of 92/100, while LearnFlow Technologies scored 52/100. EduAdapt Solutions demonstrates a stronger alignment with the RFP requirements, technical capabilities, security, and company experience.\n\n## Category-by-Category Comparison\n\n### 1. Compliance with Requirements (25%)\n[Vendor A]: 12/25 - LearnFlow Technologies' proposal demonstrates some compliance with the RFP requirements, but falls short in several areas, including ADA/WCAG compliance, security audits, and end-to-end encryption.\n[Vendor B]: 23/25 - EduAdapt Solutions has demonstrated a strong understanding of the compliance requirements, ensuring ADA, WCAG 2.1, FERPA, and COPPA compliance.\n**ADVANTAGE**: EduAdapt Solutions has a clear advantage in this category due to their strong compliance with the RFP requirements.\n\n### 2. Technical Capabilities (20%)\n[Vendor A]: 12/20 - LearnFlow Technologies' proposal aligns with some technical specifications, but lacks full SIS integration and has a lower uptime SLA.\n[Vendor B]: 18/20 - EduAdapt Solutions' proposed solution aligns well with the technical specifications, including SIS integration and AI-driven adaptive learning modules.\n**ADVANTAGE**: EduAdapt Solutions has a clear advantage in this category due to their stronger technical capabilities.\n\n### 3. Implementation & Support (15%)\n[Vendor A]: 7/15 - LearnFlow Technologies' deployment timeline is longer than preferred, and they lack on-site training and offer limited online training modules.\n[Vendor B]: 14/15 - EduAdapt Solutions has proposed a feasible deployment timeline, offers 24/7 customer support, and includes on-site training sessions and remote webinars.\n**ADVANTAGE**: EduAdapt Solutions has a clear advantage in this category due to their superior implementation and support offerings.\n\n### 4. Security & Data Protection (15%)\n[Vendor A]: 5/15 - LearnFlow Technologies lacks end-to-end encryption and independent security audits.\n[Vendor B]: 15/15 - EduAdapt Solutions has demonstrated a strong commitment to security and data protection, proposing end-to-end encryption and bi-annual independent security audits.\n**ADVANTAGE**: EduAdapt Solutions has a clear advantage in this category due to their stronger security and data protection measures.\n\n### 5. Cost & Value (15%)\n[Vendor A]: 10/15 - LearnFlow Technologies' total cost is relatively affordable, but the proposal lacks key features and has a weak value proposition.\n[Vendor B]: 13/15 - EduAdapt Solutions' proposed cost is within the budget range and includes training, implementation, and three years of support.\n**ADVANTAGE**: EduAdapt Solutions has a slight advantage in this category due to their more comprehensive cost proposal, but the value proposition should be further evaluated.\n\n### 6. Company Experience & References (10%)\n[Vendor A]: 6/10 - LearnFlow Technologies has some experience in education software development, but lacks specific details about their experience with special needs education and customer references.\n[Vendor B]: 9/10 - EduAdapt Solutions has extensive experience in developing special education software and has been implemented in over 300 school districts nationwide.\n**ADVANTAGE**: EduAdapt Solutions has a clear advantage in this category due to their more extensive experience and strong references.\n\n## Key Differentiators\n1. Compliance with RFP requirements: EduAdapt Solutions demonstrates a stronger understanding and compliance with the RFP requirements.\n2. Technical capabilities: EduAdapt Solutions offers a more robust solution with SIS integration and AI-driven adaptive learning modules.\n3. Implementation and support: EduAdapt Solutions provides a more comprehensive implementation and support offering, including on-site training and 24/7 customer support.\n4. Security and data protection: EduAdapt Solutions has a stronger commitment to security and data protection.\"\n\nSELECTED_VENDOR:\n\"EduAdapt Solutions\"\n\nCreate a formal selection justification document that:\n1. Establishes the objective criteria used in the selection process\n2. Presents the rationale for selecting the chosen vendor\n3. Addresses potential concerns about the selected vendor\n4. Explains why the selected vendor offers the best value\n5. Provides a clear path forward for contract initiation\n\nFormat your response as a professional justification document with the following structure:\n\n# Vendor Selection Justification: [Selected Vendor]\n\n## Selection Process Overview\n[Brief summary of the evaluation process and criteria used]\n\n## Justification for Selection\n[Detailed explanation of why this vendor was selected, referencing specific scores and strengths]\n\n## Value Proposition\n[Explanation of the value offered by the selected vendor relative to cost]\n\n## Risk Mitigation\n[How any identified risks or weaknesses will be addressed or mitigated]\n\n## Implementation Considerations\n[Key considerations for successful implementation with this vendor]\n\n## Conclusion\n[Final statement affirming the selection decision]",
+      "model": "llm_generic",
+      "temperature": "0.2",
+      "max_tokens": "1000",
+      "additional_configurations": "{\"skill_config_id\":\"b888322e97ac221076cf3ee8c253afd0\"}",
+      "parent": null,
+      "definition": "e8887eea97ac221076cf3ee8c253af05",
+      "definition_table": "sys_one_extend_capability_definition",
+      "prompt_inputs": [],
+      "additional_configurations_json": {
+        "skill_config_id": "b888322e97ac221076cf3ee8c253afd0"
+      }
+    },
+    "3e36ab2197a4a21076cf3ee8c253af9b": {
+      "sys_id": "3e36ab2197a4a21076cf3ee8c253af9b",
+      "name": "Prompt name",
+      "active": "1",
+      "prompt": "CONTEXT:\n{{rfx_details}}  \n\n\nGUIDELINES:\n\nAddress the specific question completely and accurately.\n\nMaintain neutrality and equal treatment of all vendors.\n\nProvide appropriate level of detail without revealing confidential information.\n\nUse professional, clear language consistent with procurement standards.\n\nFormat response for easy reading and comprehension.\n\nIf the question cannot be fully answered with available information, indicate what additional information would be needed.\n\nIf the question touches on proprietary aspects that cannot be shared, explain why with reference to procurement policies.\n\nIf the answer includes date/time, use UTC and indicate as such (e.g. Wednesday, April 16, 2025, at 1:50 AM UTC).\n\nVENDOR QUESTION\n\"{{vendor_question}}\"\n\n\n",
+      "model": "gpt-4",
+      "temperature": "0.2",
+      "max_tokens": "500",
+      "additional_configurations": "{\"skill_config_id\":\"ccf6d32d9724a21076cf3ee8c253afd1\"}",
+      "parent": "0cf6d32d9724a21076cf3ee8c253af94",
+      "definition": "b7e6d32d9724a21076cf3ee8c253af3e",
+      "definition_table": "sys_one_extend_capability_definition",
+      "prompt_inputs": [
+        "rfx_details",
+        "vendor_question"
+      ],
+      "additional_configurations_json": {
+        "skill_config_id": "ccf6d32d9724a21076cf3ee8c253afd1"
+      }
+    },
+    "449a4a169768661076cf3ee8c253af6f": {
+      "sys_id": "449a4a169768661076cf3ee8c253af6f",
+      "name": "Prompt name",
+      "active": "1",
+      "prompt": "can you clean this up for me please?\n\n {{rfx_details}} ",
+      "model": "gpt-4",
+      "temperature": "0.2",
+      "max_tokens": "500",
+      "additional_configurations": "{\"skill_config_id\":\"c10e089547242210d93447c4416d43ed\"}",
+      "parent": "7cb04a969728661076cf3ee8c253af3f",
+      "definition": "b00e089547242210d93447c4416d43bb",
+      "definition_table": "sys_one_extend_capability_definition",
+      "prompt_inputs": [
+        "rfx_details"
+      ],
+      "additional_configurations_json": {
+        "skill_config_id": "c10e089547242210d93447c4416d43ed"
+      }
+    },
+    "6b6af6ae97ac221076cf3ee8c253afce": {
+      "sys_id": "6b6af6ae97ac221076cf3ee8c253afce",
+      "name": "Prompt name",
+      "active": "1",
+      "prompt": "You are a procurement communications specialist tasked with creating professional vendor notifications for both the selected vendor and unsuccessful vendors.\n\nSELECTED_VENDOR: {{selected_vendor}}\nPROJECT_NAME: {{project_name}}\nAWARD_DATE: {{award_date}}\n\nCreate two professional communication templates:\n\n1. An award notification for the selected vendor that:\n   - Congratulates them on being selected\n   - Provides key information about next steps\n   - Establishes expectations for contract negotiations\n   - Maintains a professional, positive tone\n\n2. A regret notification for unsuccessful vendors that:\n   - Respectfully informs them they were not selected\n   - Provides limited but constructive feedback\n   - Thanks them for their participation\n   - Maintains a professional, courteous tone\n\nFormat your response as follows:\n\n# RFX Award Communications\n\n## AWARD NOTIFICATION\n\n[SUBJECT LINE: Award Notification: - [PROJECT_NAME]]\n\nDear [Selected Vendor],\n\n[Award notification text - 3-4 paragraphs including congratulations, next steps, and point of contact]\n\nSincerely,\n\n[Procurement Manager]\n[Organization Name]\n\n## REGRET NOTIFICATION\n\n[SUBJECT LINE: Bid Status Update: - [PROJECT_NAME]]\n\nDear [Vendor],\n\n[Regret notification text - 2-3 paragraphs including outcome, brief feedback, and appreciation]\n\nSincerely,\n\n[Procurement Manager]\n[Organization Name]",
+      "model": "llm_generic",
+      "temperature": "0.2",
+      "max_tokens": "1000",
+      "additional_configurations": "{\"skill_config_id\":\"a36af6ae97ac221076cf3ee8c253afed\"}",
+      "parent": null,
+      "definition": "d36a36ae97ac221076cf3ee8c253af22",
+      "definition_table": "sys_one_extend_capability_definition",
+      "prompt_inputs": [
+        "selected_vendor",
+        "project_name",
+        "award_date"
+      ],
+      "additional_configurations_json": {
+        "skill_config_id": "a36af6ae97ac221076cf3ee8c253afed"
+      }
+    },
+    "867fac239760661076cf3ee8c253aff3": {
+      "sys_id": "867fac239760661076cf3ee8c253aff3",
+      "name": "Prompt name",
+      "active": "1",
+      "prompt": "You are a procurement analyst tasked with comparing two finalist vendor proposals side-by-side to help the selection committee make a final decision.\n\nVENDOR_A_EVALUATION:\n{{vendor_a_evaluation}}\n\nVENDOR_B_EVALUATION:\n{{vendor_b_evaluation}} \n\nCreate a comprehensive side-by-side comparison of these two vendor proposals that:\n1. Compares their performance in each evaluation category\n2. Highlights key differentiators between the vendors\n3. Identifies areas where one vendor significantly outperforms the other\n4. Notes any similar strengths or shared weaknesses\n5. Analyzes the total cost of ownership and value proposition differences\n\nFormat your response as a professional comparison report with the following structure:\n\n# Vendor Comparison Analysis: [Vendor A] vs. [Vendor B]\n\n## Executive Summary\n[Brief 2-3 sentence overview comparing the vendors and their overall scores]\n\n## Category-by-Category Comparison\n\n### 1. Compliance with Requirements (25%)\n[Vendor A]: [Score]/25 - [Brief summary]\n[Vendor B]: [Score]/25 - [Brief summary]\n**ADVANTAGE**: [Which vendor has the advantage in this category and why]\n\n### 2. Technical Capabilities (20%)\n[Vendor A]: [Score]/20 - [Brief summary]\n[Vendor B]: [Score]/20 - [Brief summary]\n**ADVANTAGE**: [Which vendor has the advantage in this category and why]\n\n### 3. Implementation & Support (15%)\n[Vendor A]: [Score]/15 - [Brief summary]\n[Vendor B]: [Score]/15 - [Brief summary]\n**ADVANTAGE**: [Which vendor has the advantage in this category and why]\n\n### 4. Security & Data Protection (15%)\n[Vendor A]: [Score]/15 - [Brief summary]\n[Vendor B]: [Score]/15 - [Brief summary]\n**ADVANTAGE**: [Which vendor has the advantage in this category and why]\n\n### 5. Cost & Value (15%)\n[Vendor A]: [Score]/15 - [Brief summary]\n[Vendor B]: [Score]/15 - [Brief summary]\n**ADVANTAGE**: [Which vendor has the advantage in this category and why]\n\n### 6. Company Experience & References (10%)\n[Vendor A]: [Score]/10 - [Brief summary]\n[Vendor B]: [Score]/10 - [Brief summary]\n**ADVANTAGE**: [Which vendor has the advantage in this category and why]\n\n## Key Differentiators\n[List 3-5 major differentiating factors between the vendors]\n\n## Risk Assessment\n[Identify key risks associated with selecting each vendor]\n\n## Value Analysis\n[Compare the value propositions of both vendors considering both cost and capabilities]\n\n## Recommendation\n[Provide a clear recommendation with justification]",
+      "model": "llm_generic",
+      "temperature": "0.2",
+      "max_tokens": "1000",
+      "additional_configurations": "{\"skill_config_id\":\"99a67e6a97ac221076cf3ee8c253af40\"}",
+      "parent": "d5a67e6a97ac221076cf3ee8c253af2d",
+      "definition": "01a67e6a97ac221076cf3ee8c253af19",
+      "definition_table": "sys_one_extend_capability_definition",
+      "prompt_inputs": [
+        "vendor_a_evaluation",
+        "vendor_b_evaluation"
+      ],
+      "additional_configurations_json": {
+        "skill_config_id": "99a67e6a97ac221076cf3ee8c253af40"
+      }
+    },
+    "99b5fa2a97ac221076cf3ee8c253af04": {
+      "sys_id": "99b5fa2a97ac221076cf3ee8c253af04",
+      "name": "NOWprompt",
+      "active": "1",
+      "prompt": "You are a procurement evaluation specialist analyzing vendor proposals against RFP requirements.\n\n\n\nREQUIREMENTS:\n\n{{rfx}} \n\n\n\nVENDOR PROPOSAL:\n\n{{vendor_proposal}} \n\n\n\nEvaluate this proposal against the following weighted criteria as specified in the RFP:\n\n\n\n1. Compliance with Requirements (25%)\n\n   - Assess how well the proposal meets all compliance and regulatory requirements\n\n   - Evaluate the completeness of compliance documentation\n\n   - Consider mandatory certifications and standards mentioned in the RFP\n\n\n\n2. Technical Capabilities (20%)\n\n   - Assess alignment with technical specifications in the RFP\n\n   - Evaluate functional capabilities and platform technology\n\n   - Consider integration capabilities and scalability\n\n\n\n3. Implementation & Support (15%)\n\n   - Evaluate the deployment timeline feasibility against RFP requirements\n\n   - Assess support availability and service levels\n\n   - Review training offerings and implementation approach\n\n\n\n4. Security & Data Protection (15%)\n\n   - Assess security measures against RFP requirements\n\n   - Evaluate data protection and privacy controls\n\n   - Review audit procedures and compliance with security standards\n\n\n\n5. Cost & Value (15%)\n\n   - Evaluate pricing relative to features offered\n\n   - Assess total cost of ownership including maintenance\n\n   - Consider value proposition relative to requirements\n\n\n\n6. Company Experience & References (10%)\n\n   - Review relevant industry experience and qualifications\n\n   - Assess experience with similar projects or requirements\n\n   - Evaluate customer references and implementation scale\n\n\n\nFor each criterion:\n\n1. Provide a detailed but fair assessment (2-3 sentences)\n\n2. Assign a score that reflects how well the proposal meets the requirements\n\n3. Be objective but generally favorable to strong proposals\n\n\n\nFormat your response as a professional evaluation summary with the following structure:\n\n\n\n# Vendor Proposal Evaluation: [Vendor Name]\n\n\n\n## 1. Compliance with Requirements (25%)\n\nSCORE: [X]/25\n\nASSESSMENT: [Your detailed assessment here]\n\n\n\n## 2. Technical Capabilities (20%)\n\nSCORE: [X]/20\n\nASSESSMENT: [Your detailed assessment here]\n\n\n\n## 3. Implementation & Support (15%)\n\nSCORE: [X]/15\n\nASSESSMENT: [Your detailed assessment here]\n\n\n\n## 4. Security & Data Protection (15%)\n\nSCORE: [X]/15\n\nASSESSMENT: [Your detailed assessment here]\n\n\n\n## 5. Cost & Value (15%)\n\nSCORE: [X]/15\n\nASSESSMENT: [Your detailed assessment here]\n\n\n\n## 6. Company Experience & References (10%)\n\nSCORE: [X]/10\n\nASSESSMENT: [Your detailed assessment here]\n\n\n\n## OVERALL EVALUATION\n\nTOTAL SCORE: [X]/100\n\nRECOMMENDATION: [Brief recommendation based on the total score - use \"Highly Recommended\" for scores 85+, \"Recommended\" for 70-84, \"Conditionally Recommended\" for 60-69, and \"Not Recommended\" for below 60]\n\n\n\n[Summary paragraph highlighting key strengths and weaknesses]\n\n374 words",
+      "model": "llm_generic",
+      "temperature": "0.2",
+      "max_tokens": "1000",
+      "additional_configurations": "{\"skill_config_id\":\"c0c562a6976c221076cf3ee8c253afbd\"}",
+      "parent": null,
+      "definition": "5db5ba2a97ac221076cf3ee8c253affd",
+      "definition_table": "sys_one_extend_capability_definition",
+      "prompt_inputs": [
+        "rfx",
+        "vendor_proposal"
+      ],
+      "additional_configurations_json": {
+        "skill_config_id": "c0c562a6976c221076cf3ee8c253afbd"
+      }
+    },
+    "ba34df7a9764a21076cf3ee8c253af39": {
+      "sys_id": "ba34df7a9764a21076cf3ee8c253af39",
+      "name": "nowllm",
+      "active": "1",
+      "prompt": "## Role\n\nYou are an RFX specialist. Your task is to write RFX documents based on the RFX request details provided. You will need to gather all necessary information, structure it in a clear and concise manner, and ensure that the document adheres to the organization's standards and requirements.\n\n\n\n## Context\n\nThe RFX request details: '{{rfx_details}}'\n\n\n\n## Instructions\n\n1. Carefully read through the RFX request details provided in the context.\n\n2. Identify the key components of the RFX, including the scope of work, deliverables, timeline, and evaluation criteria.\n\n3. Structure the RFX document in a clear and logical manner, ensuring that each section is well-organized and easy to understand.\n\n4. Use clear and concise language throughout the document, avoiding unnecessary jargon or technical terms.\n\n5. Ensure that the RFX document adheres to the organization's standards and requirements, including formatting, style, and content guidelines.\n\n6. Review and proofread the document for accuracy and completeness before submitting it.\n\n\n\n## Output\n\nThe document should be structured in a clear and logical manner, with each section clearly labeled and easy to understand. The language used should be clear and concise, avoiding unnecessary jargon or technical terms. The document should be free of errors and omissions, and should be ready for submission to the relevant stakeholders.\n\n\n\n211 words",
+      "model": "llm_generic",
+      "temperature": "0.2",
+      "max_tokens": "1000",
+      "additional_configurations": "{\"skill_config_id\":\"c10e089547242210d93447c4416d43ed\"}",
+      "parent": null,
+      "definition": "7a345f7a9764a21076cf3ee8c253af70",
+      "definition_table": "sys_one_extend_capability_definition",
+      "prompt_inputs": [
+        "rfx_details"
+      ],
+      "additional_configurations_json": {
+        "skill_config_id": "c10e089547242210d93447c4416d43ed"
+      }
+    },
+    "c847622a976c221076cf3ee8c253af08": {
+      "sys_id": "c847622a976c221076cf3ee8c253af08",
+      "name": "Prompt name",
+      "active": "1",
+      "prompt": "You are a procurement scoring coordinator standardizing evaluation scores for consistency across vendor proposals.\n\nEVALUATION_RESULTS:\n{{evaluation_results}}\n\nReview these evaluation scores for consistency and standardize them based on these guidelines:\n\n1. Review the raw scores in each category and the overall score\n2. Convert raw scores to standardized qualitative ratings:\n   - 90-100: Exceptional (5)\n   - 80-89: Strong (4)\n   - 70-79: Satisfactory (3)\n   - 60-69: Marginal (2)\n   - Below 60: Unacceptable (1)\n\n3. Highlight any notable strengths or weaknesses\n4. Provide a brief justification for the standardized rating\n5. Make a clear recommendation on whether this vendor should be considered a finalist\n\nFormat your response as a professional standardized evaluation with the following structure:\n\n# Standardized Evaluation: [Vendor Name]\n\n## Raw Score Analysis\n- Overall Score: [X]/100\n- Key Strengths: [List 2-3 highest scoring areas]\n- Areas for Improvement: [List 2-3 lowest scoring areas]\n\n## Standardized Rating\nQUALITATIVE RATING: [Exceptional/Strong/Satisfactory/Marginal/Unacceptable]\nNUMERICAL EQUIVALENT: [5/4/3/2/1]\n\n## Justification\n[2-3 sentences explaining why this rating is appropriate based on the evaluation results]\n\n## Recommendation\n[Clear statement on whether this vendor should be considered a finalist]\n- FINALIST STATUS: [Yes/No]\n- RANKING POSITION: [e.g., \"Top Contender\", \"Strong Consideration\", \"Backup Option\", \"Not Recommended\"]\n\n## Additional Notes\n[Any specific considerations, concerns, or benefits worth highlighting to the selection committee]",
+      "model": "llm_generic",
+      "temperature": "0.2",
+      "max_tokens": "1000",
+      "additional_configurations": "{\"skill_config_id\":\"d847622a976c221076cf3ee8c253af33\"}",
+      "parent": null,
+      "definition": "8047622a976c221076cf3ee8c253af01",
+      "definition_table": "sys_one_extend_capability_definition",
+      "prompt_inputs": [
+        "evaluation_results"
+      ],
+      "additional_configurations_json": {
+        "skill_config_id": "d847622a976c221076cf3ee8c253af33"
+      }
+    },
+    "ddec061a9768661076cf3ee8c253af09": {
+      "sys_id": "ddec061a9768661076cf3ee8c253af09",
+      "name": "Prompt name",
+      "active": "1",
+      "prompt": "## Role\nYou are an RFX specialist. Your task is to write RFX documents based on the RFX request details provided. You will need to gather all necessary information, structure it in a clear and concise manner, and ensure that the document adheres to the organization's standards and requirements.\n\n## Context\nThe RFX request details: '{{rfx_details}}'\n\n## Instructions\n1. Carefully read through the RFX request details provided in the context.\n2. Identify the key components of the RFX, including the scope of work, deliverables, timeline, and evaluation criteria.\n3. Structure the RFX document in a clear and logical manner, ensuring that each section is well-organized and easy to understand.\n4. Use clear and concise language throughout the document, avoiding unnecessary jargon or technical terms.\n5. Ensure that the RFX document adheres to the organization's standards and requirements, including formatting, style, and content guidelines.\n6. Review and proofread the document for accuracy and completeness before submitting it.\n\n## Output\nThe document should be structured in a clear and logical manner, with each section clearly labeled and easy to understand. The language used should be clear and concise, avoiding unnecessary jargon or technical terms. The document should be free of errors and omissions, and should be ready for submission to the relevant stakeholders.\n",
+      "model": "gpt-4",
+      "temperature": "0.2",
+      "max_tokens": "500",
+      "additional_configurations": "{\"skill_config_id\":\"c10e089547242210d93447c4416d43ed\"}",
+      "parent": "6fa74a129768661076cf3ee8c253af72",
+      "definition": "b00e089547242210d93447c4416d43bb",
+      "definition_table": "sys_one_extend_capability_definition",
+      "prompt_inputs": [
+        "rfx_details"
+      ],
+      "additional_configurations_json": {
+        "skill_config_id": "c10e089547242210d93447c4416d43ed"
+      }
+    },
+    "f5703bfe97e4a21076cf3ee8c253afec": {
+      "sys_id": "f5703bfe97e4a21076cf3ee8c253afec",
+      "name": "Prompt name",
+      "active": "1",
+      "prompt": "You are a procurement evaluation specialist analyzing vendor proposals against RFP requirements. \n\nREQUIREMENTS:\n{{rfx}} \n\nVENDOR PROPOSAL:\n{{vendor_proposal}} \n\nEvaluate this proposal against the following weighted criteria as specified in the RFP:\n\n1. Compliance with Requirements (25%)\n   - Assess how well the proposal meets all compliance and regulatory requirements\n   - Evaluate the completeness of compliance documentation\n   - Consider mandatory certifications and standards mentioned in the RFP\n\n2. Technical Capabilities (20%)\n   - Assess alignment with technical specifications in the RFP\n   - Evaluate functional capabilities and platform technology\n   - Consider integration capabilities and scalability\n\n3. Implementation & Support (15%)\n   - Evaluate the deployment timeline feasibility against RFP requirements\n   - Assess support availability and service levels\n   - Review training offerings and implementation approach\n\n4. Security & Data Protection (15%)\n   - Assess security measures against RFP requirements\n   - Evaluate data protection and privacy controls\n   - Review audit procedures and compliance with security standards\n\n5. Cost & Value (15%)\n   - Evaluate pricing relative to features offered\n   - Assess total cost of ownership including maintenance\n   - Consider value proposition relative to requirements\n\n6. Company Experience & References (10%)\n   - Review relevant industry experience and qualifications\n   - Assess experience with similar projects or requirements\n   - Evaluate customer references and implementation scale\n\nFor each criterion:\n1. Provide a detailed but fair assessment (2-3 sentences)\n2. Assign a score that reflects how well the proposal meets the requirements\n3. Be objective but generally favorable to strong proposals\n\nFormat your response as a professional evaluation summary with the following structure:\n\n# Vendor Proposal Evaluation: [Vendor Name]\n\n## 1. Compliance with Requirements (25%)\nSCORE: [X]/25\nASSESSMENT: [Your detailed assessment here]\n\n## 2. Technical Capabilities (20%)\nSCORE: [X]/20\nASSESSMENT: [Your detailed assessment here]\n\n## 3. Implementation & Support (15%)\nSCORE: [X]/15\nASSESSMENT: [Your detailed assessment here]\n\n## 4. Security & Data Protection (15%)\nSCORE: [X]/15\nASSESSMENT: [Your detailed assessment here]\n\n## 5. Cost & Value (15%)\nSCORE: [X]/15\nASSESSMENT: [Your detailed assessment here]\n\n## 6. Company Experience & References (10%)\nSCORE: [X]/10\nASSESSMENT: [Your detailed assessment here]\n\n## OVERALL EVALUATION\nTOTAL SCORE: [X]/100\nRECOMMENDATION: [Brief recommendation based on the total score - use \"Highly Recommended\" for scores 85+, \"Recommended\" for 70-84, \"Conditionally Recommended\" for 60-69, and \"Not Recommended\" for below 60]\n\n[Summary paragraph highlighting key strengths and weaknesses]",
+      "model": "gpt-4",
+      "temperature": "0.2",
+      "max_tokens": "500",
+      "additional_configurations": "{\"skill_config_id\":\"c0c562a6976c221076cf3ee8c253afbd\"}",
+      "parent": "bcfdee6e976c221076cf3ee8c253afec",
+      "definition": "c4c562a6976c221076cf3ee8c253af74",
+      "definition_table": "sys_one_extend_capability_definition",
+      "prompt_inputs": [
+        "rfx",
+        "vendor_proposal"
+      ],
+      "additional_configurations_json": {
+        "skill_config_id": "c0c562a6976c221076cf3ee8c253afbd"
+      }
+    }
+  },
+  "flows": {},
+  "triggers": {
+    "331c139947e46210d93447c4416d43b0": {
+      "sys_id": "331c139947e46210d93447c4416d43b0",
+      "active": "1",
+      "usecase": "21e5931147e46210d93447c4416d4362",
+      "target_table": "x_nowge_rfx_ai_rfx_question",
+      "condition": "opened_byISNOTEMPTY^rfx_request.runrfx=true^EQ",
+      "run_as": "opened_by",
+      "objective_template": "Process and respond to the vendor question for RFx ${number}"
+    },
+    "496efb269724621076cf3ee8c253afe3": {
+      "sys_id": "496efb269724621076cf3ee8c253afe3",
+      "active": "1",
+      "usecase": "6fcf107947e0e210d93447c4416d438f",
+      "target_table": "x_nowge_rfx_ai_rfx_request",
+      "condition": "rfx_status=evaluations_complete^opened_byISNOTEMPTY^runrfx=true^EQ",
+      "run_as": "opened_by",
+      "objective_template": "Compare top-performing vendors and generate selection recommendation for RFx request ${number}"
+    },
+    "a68530d147282210d93447c4416d43b5": {
+      "sys_id": "a68530d147282210d93447c4416d43b5",
+      "active": "1",
+      "usecase": "062154d947242210d93447c4416d437f",
+      "target_table": "x_nowge_rfx_ai_rfx_request",
+      "condition": "opened_byISNOTEMPTY^runrfx=true^EQ",
+      "run_as": "opened_by",
+      "objective_template": "Validate all required information for RFX request ${number}, ensuring it meets organizational standards before routing for approval."
+    },
+    "d76f43e69720621076cf3ee8c253af33": {
+      "sys_id": "d76f43e69720621076cf3ee8c253af33",
+      "active": "1",
+      "usecase": "f4c32b6d9764a21076cf3ee8c253af2e",
+      "target_table": "x_nowge_rfx_ai_rfx_request",
+      "condition": "rfx_status=evaluation^opened_byISNOTEMPTY^runrfx=true^EQ",
+      "run_as": "opened_by",
+      "objective_template": "Evaluate vendor proposals for RFx ${number} and determine the most qualified submissions"
+    },
+    "e628be1147246210d93447c4416d430b": {
+      "sys_id": "e628be1147246210d93447c4416d430b",
+      "active": "1",
+      "usecase": "55c5d6dd47206210d93447c4416d438d",
+      "target_table": "x_nowge_rfx_ai_rfx_request",
+      "condition": "approval=approved^opened_byISNOTEMPTY^runrfx=true^EQ",
+      "run_as": "opened_by",
+      "objective_template": "Generate a complete RFX document for approved request ${number}"
+    }
+  }
+}

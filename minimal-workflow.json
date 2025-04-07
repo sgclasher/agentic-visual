@@ -1,0 +1,38 @@
+{
+  "use_cases": [
+    {
+      "sys_id": "test-1",
+      "name": "Test Use Case",
+      "description": "This is a test use case for debugging purposes",
+      "agents": [
+        {
+          "sys_id": "agent-1",
+          "name": "Test Agent"
+        }
+      ]
+    }
+  ],
+  "agents": {
+    "agent-1": {
+      "sys_id": "agent-1",
+      "name": "Test Agent",
+      "description": "A test agent for debugging",
+      "tools": [
+        {
+          "sys_id": "tool-1",
+          "name": "Test Tool",
+          "type": "capability"
+        }
+      ]
+    }
+  },
+  "tools": {
+    "tool-1": {
+      "sys_id": "tool-1",
+      "name": "Test Tool",
+      "description": "A test tool"
+    }
+  },
+  "capabilities": {},
+  "triggers": {}
+} 

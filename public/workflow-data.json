@@ -1,0 +1,689 @@
+{
+  "script_execution_info": {
+    "executed_at": "2025-04-06T21:59:10.592Z",
+    "scope": "demo_data",
+    "source": "hardcoded-demo-v30.0"
+  },
+  "use_cases": [
+    {
+      "sys_id": "rfx-intake-1",
+      "name": "RFX Request Intake Manager",
+      "description": "Manages the intake process for new RFX (RFP, RFI, RFQ) requests, ensuring all required information is collected and validated.",
+      "process_flow": {
+        "sequence_number": 1,
+        "phase": "Intake",
+        "input_artifacts": [
+          "Business requirements",
+          "Budget information"
+        ],
+        "output_artifacts": [
+          "Validated RFX request"
+        ]
+      },
+      "agents": [
+        {
+          "sys_id": "validator-1",
+          "name": "RFX Validator"
+        },
+        {
+          "sys_id": "collector-1",
+          "name": "RFX Requirements Collector"
+        },
+        {
+          "sys_id": "approval-1",
+          "name": "RFX Approval Coordinator"
+        }
+      ],
+      "triggers": [
+        {
+          "sys_id": "trigger-1",
+          "name": "New RFX Request",
+          "condition": "when a new RFX request is created",
+          "target_table": "rfx_request"
+        }
+      ]
+    },
+    {
+      "sys_id": "rfx-doc-gen-1",
+      "name": "RFX Document Generation",
+      "description": "Generates complete RFX documents based on approved requests by retrieving data and creating formatted content.",
+      "process_flow": {
+        "sequence_number": 2,
+        "phase": "Creation",
+        "input_artifacts": [
+          "Approved RFX request"
+        ],
+        "output_artifacts": [
+          "Generated RFX document"
+        ]
+      },
+      "agents": [
+        {
+          "sys_id": "creator-1",
+          "name": "RFX Document Creator"
+        },
+        {
+          "sys_id": "retriever-1",
+          "name": "RFX Data Retriever"
+        }
+      ],
+      "triggers": [
+        {
+          "sys_id": "trigger-2",
+          "name": "RFX Request Approved",
+          "condition": "when RFX request status changes to approved",
+          "target_table": "rfx_request"
+        }
+      ]
+    },
+    {
+      "sys_id": "rfx-qa-1",
+      "name": "RFX Vendor Q&A Management",
+      "description": "Manages vendor questions during the RFX process, generating professional and consistent responses.",
+      "process_flow": {
+        "sequence_number": 3,
+        "phase": "Execution",
+        "input_artifacts": [
+          "Vendor questions",
+          "RFX document"
+        ],
+        "output_artifacts": [
+          "Answered vendor questions"
+        ]
+      },
+      "agents": [
+        {
+          "sys_id": "answerer-1",
+          "name": "RFX Vendor Question Answerer"
+        },
+        {
+          "sys_id": "preprocessor-1",
+          "name": "RFX Vendor Question Pre-Processor"
+        }
+      ],
+      "triggers": [
+        {
+          "sys_id": "trigger-3",
+          "name": "New Vendor Question",
+          "condition": "when a new vendor question is submitted",
+          "target_table": "rfx_question"
+        }
+      ]
+    },
+    {
+      "sys_id": "rfx-eval-1",
+      "name": "RFX Vendor Evaluation",
+      "description": "Evaluates vendor proposals against RFX requirements using AI-driven analysis.",
+      "process_flow": {
+        "sequence_number": 4,
+        "phase": "Evaluation",
+        "input_artifacts": [
+          "Vendor proposals",
+          "RFX requirements"
+        ],
+        "output_artifacts": [
+          "Evaluation scores",
+          "Comparison report"
+        ]
+      },
+      "agents": [
+        {
+          "sys_id": "eval-agent-1",
+          "name": "RFX Submission Evaluation Agent"
+        },
+        {
+          "sys_id": "intake-agent-1",
+          "name": "RFX Submission Intake Agent"
+        },
+        {
+          "sys_id": "scoring-1",
+          "name": "RFX Scoring Coordinator"
+        }
+      ],
+      "triggers": [
+        {
+          "sys_id": "trigger-4",
+          "name": "Vendor Proposal Received",
+          "condition": "when vendor proposal status changes to submitted",
+          "target_table": "vendor_response"
+        }
+      ]
+    },
+    {
+      "sys_id": "rfx-select-1",
+      "name": "RFX Vendor Finalist Selection",
+      "description": "Compares top-ranked vendor proposals and generates selection recommendations.",
+      "process_flow": {
+        "sequence_number": 5,
+        "phase": "Selection",
+        "input_artifacts": [
+          "Evaluation scores",
+          "Vendor comparison"
+        ],
+        "output_artifacts": [
+          "Selection recommendation",
+          "Award notifications"
+        ]
+      },
+      "agents": [
+        {
+          "sys_id": "comparison-1",
+          "name": "RFX Vendor Comparison Agent"
+        },
+        {
+          "sys_id": "decision-1",
+          "name": "RFX Decision Support Agent"
+        },
+        {
+          "sys_id": "award-1",
+          "name": "RFX Award Communication Agent"
+        }
+      ],
+      "triggers": [
+        {
+          "sys_id": "trigger-5",
+          "name": "Evaluation Complete",
+          "condition": "when all vendor evaluations are completed",
+          "target_table": "rfx_request"
+        }
+      ]
+    }
+  ],
+  "agents": {
+    "validator-1": {
+      "sys_id": "validator-1",
+      "name": "RFX Validator",
+      "description": "Validates RFX request information against organizational policies and standards",
+      "tools": [
+        {
+          "sys_id": "get-rfx-1",
+          "name": "Get RFX Request",
+          "type": "subflow"
+        },
+        {
+          "sys_id": "validate-rfx-1",
+          "name": "Validate RFX Request",
+          "type": "subflow"
+        },
+        {
+          "sys_id": "update-status-1",
+          "name": "Update RFX Status",
+          "type": "subflow"
+        }
+      ]
+    },
+    "collector-1": {
+      "sys_id": "collector-1",
+      "name": "RFX Requirements Collector",
+      "description": "Collects and organizes all required information for new RFX requests",
+      "tools": [
+        {
+          "sys_id": "create-rfx-1",
+          "name": "Create RFX Request",
+          "type": "subflow"
+        },
+        {
+          "sys_id": "update-rfx-1",
+          "name": "Update RFX Request",
+          "type": "subflow"
+        }
+      ]
+    },
+    "approval-1": {
+      "sys_id": "approval-1",
+      "name": "RFX Approval Coordinator",
+      "description": "Manages the approval workflow for validated RFX requests",
+      "tools": [
+        {
+          "sys_id": "get-rfx-approval-1",
+          "name": "Get RFX Request",
+          "type": "subflow"
+        },
+        {
+          "sys_id": "create-approval-1",
+          "name": "Create Approval Workflow",
+          "type": "subflow"
+        }
+      ]
+    },
+    "creator-1": {
+      "sys_id": "creator-1",
+      "name": "RFX Document Creator",
+      "description": "Generates RFX document content and saves it to the RFX Request record",
+      "tools": [
+        {
+          "sys_id": "doc-gen-1",
+          "name": "RFX Document Generator",
+          "type": "capability"
+        },
+        {
+          "sys_id": "update-rfx-doc-1",
+          "name": "Update RFX Request",
+          "type": "subflow"
+        }
+      ]
+    },
+    "retriever-1": {
+      "sys_id": "retriever-1",
+      "name": "RFX Data Retriever",
+      "description": "Retrieves approved RFX request data",
+      "tools": [
+        {
+          "sys_id": "get-approved-1",
+          "name": "Get Approved RFX Details",
+          "type": "subflow"
+        }
+      ]
+    },
+    "answerer-1": {
+      "sys_id": "answerer-1",
+      "name": "RFX Vendor Question Answerer",
+      "description": "Generates and records professional responses to vendor questions during the RFx process",
+      "tools": [
+        {
+          "sys_id": "update-question-1",
+          "name": "Update Vendor Question with Answer",
+          "type": "subflow"
+        },
+        {
+          "sys_id": "get-question-1",
+          "name": "Get Vendor Question",
+          "type": "subflow"
+        },
+        {
+          "sys_id": "generate-answer-1",
+          "name": "Generate Answer for Vendor",
+          "type": "capability"
+        }
+      ]
+    },
+    "preprocessor-1": {
+      "sys_id": "preprocessor-1",
+      "name": "RFX Vendor Question Pre-Processor",
+      "description": "Processes vendor questions, categorizing them and preparing them for response generation",
+      "tools": [
+        {
+          "sys_id": "get-rfx-via-q-1",
+          "name": "Get RFX Request via Vendor Question",
+          "type": "subflow"
+        }
+      ]
+    },
+    "eval-agent-1": {
+      "sys_id": "eval-agent-1",
+      "name": "RFX Submission Evaluation Agent",
+      "description": "Analyzes vendor proposals against RFx requirements and generates summaries",
+      "tools": [
+        {
+          "sys_id": "get-vendor-1",
+          "name": "Get Vendor Response",
+          "type": "subflow"
+        },
+        {
+          "sys_id": "get-rfx-eval-1",
+          "name": "Get RFx Request",
+          "type": "subflow"
+        },
+        {
+          "sys_id": "proposal-eval-1",
+          "name": "RFX Proposal Evaluator Tool",
+          "type": "capability"
+        },
+        {
+          "sys_id": "update-eval-1",
+          "name": "Update Vendor Response with Evaluation",
+          "type": "subflow"
+        }
+      ]
+    },
+    "intake-agent-1": {
+      "sys_id": "intake-agent-1",
+      "name": "RFX Submission Intake Agent",
+      "description": "Receives and validates vendor proposal submissions linked to an RFx",
+      "tools": [
+        {
+          "sys_id": "receive-proposal-1",
+          "name": "Receive and Validate Proposal",
+          "type": "subflow"
+        }
+      ]
+    },
+    "scoring-1": {
+      "sys_id": "scoring-1",
+      "name": "RFX Scoring Coordinator",
+      "description": "Consolidates evaluation summaries and assigns preliminary qualitative scores",
+      "tools": [
+        {
+          "sys_id": "get-evaluation-1",
+          "name": "Get Vendor Response Evaluation",
+          "type": "subflow"
+        },
+        {
+          "sys_id": "standardize-1",
+          "name": "RFX Score Standardizer Tool",
+          "type": "capability"
+        }
+      ]
+    },
+    "comparison-1": {
+      "sys_id": "comparison-1",
+      "name": "RFX Vendor Comparison Agent",
+      "description": "Analyzes and compares top-performing vendor proposals for selection",
+      "tools": [
+        {
+          "sys_id": "compare-1",
+          "name": "RFX Vendor Comparison Tool",
+          "type": "capability"
+        },
+        {
+          "sys_id": "get-top-1",
+          "name": "Get Top Vendor Responses",
+          "type": "subflow"
+        },
+        {
+          "sys_id": "store-comparison-1",
+          "name": "Store Comparison Results",
+          "type": "subflow"
+        }
+      ]
+    },
+    "decision-1": {
+      "sys_id": "decision-1",
+      "name": "RFX Decision Support Agent",
+      "description": "Generates a summary justification based on vendor comparison",
+      "tools": [
+        {
+          "sys_id": "justify-1",
+          "name": "RFX Selection Justification Tool",
+          "type": "capability"
+        }
+      ]
+    },
+    "award-1": {
+      "sys_id": "award-1",
+      "name": "RFX Award Communication Agent",
+      "description": "Creates award and rejection communication templates",
+      "tools": [
+        {
+          "sys_id": "award-comm-1",
+          "name": "RFX Award Communication Tool",
+          "type": "capability"
+        }
+      ]
+    }
+  },
+  "tools": {
+    "get-rfx-1": {
+      "sys_id": "get-rfx-1",
+      "name": "Get RFX Request",
+      "description": "Retrieves RFX Request record details",
+      "type": "subflow",
+      "target_document_table": "sys_hub_flow"
+    },
+    "validate-rfx-1": {
+      "sys_id": "validate-rfx-1",
+      "name": "Validate RFX Request",
+      "description": "Validates an RFX request against organizational policies and standards",
+      "type": "subflow",
+      "target_document_table": "sys_hub_flow"
+    },
+    "update-status-1": {
+      "sys_id": "update-status-1",
+      "name": "Update RFX Status",
+      "description": "Updates an existing RFX request status",
+      "type": "subflow",
+      "target_document_table": "sys_hub_flow"
+    },
+    "create-rfx-1": {
+      "sys_id": "create-rfx-1",
+      "name": "Create RFX Request",
+      "description": "Creates a new RFX request record in the system",
+      "type": "subflow",
+      "target_document_table": "sys_hub_flow"
+    },
+    "update-rfx-1": {
+      "sys_id": "update-rfx-1",
+      "name": "Update RFX Request",
+      "description": "Updates an existing RFX request with modified information",
+      "type": "subflow",
+      "target_document_table": "sys_hub_flow"
+    },
+    "get-rfx-approval-1": {
+      "sys_id": "get-rfx-approval-1",
+      "name": "Get RFX Request",
+      "description": "Retrieves RFX Request details for approval",
+      "type": "subflow",
+      "target_document_table": "sys_hub_flow"
+    },
+    "create-approval-1": {
+      "sys_id": "create-approval-1",
+      "name": "Create Approval Workflow",
+      "description": "Runs an approval workflow for RFX requests",
+      "type": "subflow",
+      "target_document_table": "sys_hub_flow"
+    },
+    "doc-gen-1": {
+      "sys_id": "doc-gen-1",
+      "name": "RFX Document Generator",
+      "description": "Generates RFX document content based on requirements",
+      "type": "capability",
+      "target_document_table": "cap-1"
+    },
+    "update-rfx-doc-1": {
+      "sys_id": "update-rfx-doc-1",
+      "name": "Update RFX Request",
+      "description": "Updates the RFX request with generated document",
+      "type": "subflow",
+      "target_document_table": "sys_hub_flow"
+    },
+    "get-approved-1": {
+      "sys_id": "get-approved-1",
+      "name": "Get Approved RFX Details",
+      "description": "Retrieves comprehensive information about an approved RFX request",
+      "type": "subflow",
+      "target_document_table": "sys_hub_flow"
+    },
+    "update-question-1": {
+      "sys_id": "update-question-1",
+      "name": "Update Vendor Question with Answer",
+      "description": "Updates the RFX Question record with the generated answer",
+      "type": "subflow",
+      "target_document_table": "sys_hub_flow"
+    },
+    "get-question-1": {
+      "sys_id": "get-question-1",
+      "name": "Get Vendor Question",
+      "description": "Retrieves vendor question details",
+      "type": "subflow",
+      "target_document_table": "sys_hub_flow"
+    },
+    "generate-answer-1": {
+      "sys_id": "generate-answer-1",
+      "name": "Generate Answer for Vendor",
+      "description": "Creates professional response to vendor question",
+      "type": "capability",
+      "target_document_table": "cap-2"
+    },
+    "get-rfx-via-q-1": {
+      "sys_id": "get-rfx-via-q-1",
+      "name": "Get RFX Request via Vendor Question",
+      "description": "Retrieves the RFX Request linked to a vendor question",
+      "type": "subflow",
+      "target_document_table": "sys_hub_flow"
+    },
+    "get-vendor-1": {
+      "sys_id": "get-vendor-1",
+      "name": "Get Vendor Response",
+      "description": "Retrieves vendor response record details",
+      "type": "subflow",
+      "target_document_table": "sys_hub_flow"
+    },
+    "get-rfx-eval-1": {
+      "sys_id": "get-rfx-eval-1",
+      "name": "Get RFx Request",
+      "description": "Retrieves RFX Request details for evaluation",
+      "type": "subflow",
+      "target_document_table": "sys_hub_flow"
+    },
+    "proposal-eval-1": {
+      "sys_id": "proposal-eval-1",
+      "name": "RFX Proposal Evaluator Tool",
+      "description": "Analyzes vendor proposals against RFx document",
+      "type": "capability",
+      "target_document_table": "cap-3"
+    },
+    "update-eval-1": {
+      "sys_id": "update-eval-1",
+      "name": "Update Vendor Response with Evaluation",
+      "description": "Records evaluation results on vendor response record",
+      "type": "subflow",
+      "target_document_table": "sys_hub_flow"
+    },
+    "receive-proposal-1": {
+      "sys_id": "receive-proposal-1",
+      "name": "Receive and Validate Proposal",
+      "description": "Processes incoming vendor proposals",
+      "type": "subflow",
+      "target_document_table": "sys_hub_flow"
+    },
+    "get-evaluation-1": {
+      "sys_id": "get-evaluation-1",
+      "name": "Get Vendor Response Evaluation",
+      "description": "Retrieves evaluation summary for a vendor response",
+      "type": "subflow",
+      "target_document_table": "sys_hub_flow"
+    },
+    "standardize-1": {
+      "sys_id": "standardize-1",
+      "name": "RFX Score Standardizer Tool",
+      "description": "Standardizes evaluation scores for consistency",
+      "type": "capability",
+      "target_document_table": "cap-4"
+    },
+    "compare-1": {
+      "sys_id": "compare-1",
+      "name": "RFX Vendor Comparison Tool",
+      "description": "Compares key aspects of top-scoring vendor proposals",
+      "type": "capability",
+      "target_document_table": "cap-5"
+    },
+    "get-top-1": {
+      "sys_id": "get-top-1",
+      "name": "Get Top Vendor Responses",
+      "description": "Retrieves the highest scoring vendor responses",
+      "type": "subflow",
+      "target_document_table": "sys_hub_flow"
+    },
+    "store-comparison-1": {
+      "sys_id": "store-comparison-1",
+      "name": "Store Comparison Results",
+      "description": "Saves vendor comparison results to the RFX request",
+      "type": "subflow",
+      "target_document_table": "sys_hub_flow"
+    },
+    "justify-1": {
+      "sys_id": "justify-1",
+      "name": "RFX Selection Justification Tool",
+      "description": "Creates a clear justification for vendor selection",
+      "type": "capability",
+      "target_document_table": "cap-6"
+    },
+    "award-comm-1": {
+      "sys_id": "award-comm-1",
+      "name": "RFX Award Communication Tool",
+      "description": "Creates professional vendor notifications",
+      "type": "capability",
+      "target_document_table": "cap-7"
+    }
+  },
+  "capabilities": {
+    "cap-1": {
+      "sys_id": "cap-1",
+      "name": "RFX Document Generator Capability",
+      "description": "Creates comprehensive RFX documents based on requirements",
+      "type": "skill"
+    },
+    "cap-2": {
+      "sys_id": "cap-2",
+      "name": "Vendor Answer Generator Capability",
+      "description": "Creates professional responses to vendor questions",
+      "type": "skill"
+    },
+    "cap-3": {
+      "sys_id": "cap-3",
+      "name": "Proposal Evaluation Capability",
+      "description": "Evaluates vendor proposals against requirements",
+      "type": "skill"
+    },
+    "cap-4": {
+      "sys_id": "cap-4",
+      "name": "Score Standardization Capability",
+      "description": "Standardizes evaluation scores consistently",
+      "type": "skill"
+    },
+    "cap-5": {
+      "sys_id": "cap-5",
+      "name": "Vendor Comparison Capability",
+      "description": "Compares vendor proposals side-by-side",
+      "type": "skill"
+    },
+    "cap-6": {
+      "sys_id": "cap-6",
+      "name": "Selection Justification Capability",
+      "description": "Creates objective justification for vendor selection",
+      "type": "skill"
+    },
+    "cap-7": {
+      "sys_id": "cap-7",
+      "name": "Award Communication Capability",
+      "description": "Creates professional award and rejection notices",
+      "type": "skill"
+    }
+  },
+  "triggers": {
+    "trigger-1": {
+      "sys_id": "trigger-1",
+      "name": "New RFX Request",
+      "usecase": "rfx-intake-1",
+      "target_table": "rfx_request",
+      "condition": "opened_byISNOTEMPTY^runrfx=true^EQ",
+      "objective_template": "Validate all required information for RFX request ${number}"
+    },
+    "trigger-2": {
+      "sys_id": "trigger-2",
+      "name": "RFX Request Approved",
+      "usecase": "rfx-doc-gen-1",
+      "target_table": "rfx_request",
+      "condition": "approval=approved^runrfx=true^EQ",
+      "objective_template": "Generate a complete RFX document for approved request ${number}"
+    },
+    "trigger-3": {
+      "sys_id": "trigger-3",
+      "name": "New Vendor Question",
+      "usecase": "rfx-qa-1",
+      "target_table": "rfx_question",
+      "condition": "opened_byISNOTEMPTY^rfx_request.runrfx=true^EQ",
+      "objective_template": "Process and respond to vendor question for RFx ${number}"
+    },
+    "trigger-4": {
+      "sys_id": "trigger-4",
+      "name": "Vendor Proposal Received",
+      "usecase": "rfx-eval-1",
+      "target_table": "vendor_response",
+      "condition": "rfx_status=evaluation^runrfx=true^EQ",
+      "objective_template": "Evaluate vendor proposal for RFx ${number}"
+    },
+    "trigger-5": {
+      "sys_id": "trigger-5",
+      "name": "Evaluation Complete",
+      "usecase": "rfx-select-1",
+      "target_table": "rfx_request",
+      "condition": "rfx_status=evaluations_complete^runrfx=true^EQ",
+      "objective_template": "Compare top vendors and generate recommendation for RFx ${number}"
+    }
+  },
+  "execution": {
+    "timestamp": "2025-04-06T21:59:10.592Z",
+    "source": "hardcoded-demo-data"
+  }
+}

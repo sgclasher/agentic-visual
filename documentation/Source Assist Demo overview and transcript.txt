@@ -1,0 +1,104 @@
+# Source Assist: ServiceNow AI Procurement Solution
+
+## Business Problem
+
+For most procurement functions, **strategic sourcing** is a labor intensive process.
+
+- **45+ days** average RFx cycle time
+- **62% of procurement** time spent on administrative tasks
+- **42% of RFPs** require post issuance clarifications
+- **30+ labor hours** spent per RFx process
+
+## Solution
+
+- Introducing **Source Assist** by NOWGENTIC
+- Built on ServiceNow FSC and uses Yokohama's AI agent and Now Assist capabilities
+- Source Assist reduces administrative burden on procurement teams and **reduces cycle times by 70%**
+
+## Source Assist Use Cases and Agents
+
+### Sourcing Request Intake
+Manages the process for collecting, validating, and approving new strategic sourcing requests.
+- **AI Agents:**
+  - Requirements Collector
+  - Requirements Validator
+  - Sourcing Approval Coordinator
+
+### RFx Document Creation
+Creates comprehensive RFx document based on approved strategic sourcing requests.
+- **AI Agents:**
+  - RFX Data Retriever
+  - RFX Document Creator
+  - RFX Record Updater
+
+### Vendor Q&A
+Manages vendor questions and generates consistent, fair responses during the competitive bidding process.
+- **AI Agents:**
+  - Vendor Question Processor
+  - Q&A Response Generator
+
+### Vendor Evaluation
+Streamlines evaluation of vendor proposals against predefined evaluation criteria.
+- **AI Agents:**
+  - Submission Intake Agent
+  - Submission Evaluation Agent
+  - Scoring Coordinator
+
+### Vendor Selection
+Supports decision making for final vendor selection.
+- **AI Agents:**
+  - Vendor Comparison Agent
+  - Decision Support Agent
+  - Award Communication Agent
+
+## Value Achieved Using Source Assist
+
+- **70% reduction** in total average RFx cycle time
+- **75% reduction** in time spent on administrative tasks
+- **85% reduction** in document errors through AI driven consistency checks
+- **65% reduction** in total labor hours spent per RFx process
+
+## Competitive Landscape
+
+While Coupa and GEP offer procurement automation with AI enhanced analytics, our Source Assist solution delivers truly autonomous agentic AI that orchestrates the entire strategic sourcing process end to end, giving it a competitive advantage and larger ROI.
+
+# ServiceNow Source Assist Demo Transcription
+
+## Introduction
+
+Our demo addresses the workload on strategic sourcing teams and procurement where processes are manual, error-prone, and time-consuming, with some cycles averaging 45 days or more. Our Source Assist solution transforms this process using ServiceNow's new agentic AI capabilities.
+
+By leveraging autonomous AI agents, we can:
+- Reduce cycle times by 70%
+- Reduce documentation errors
+- Free procurement teams to focus on strategic work rather than administrative tasks
+
+Each use case in the sourcing lifecycle has a set of focused worker agents. This team of AI agents works together seamlessly with humans, providing oversight only at key approval points.
+
+## Demo Scenario
+
+In this scenario, a district school board needs to source learning software for special needs students, and they will follow a competitive bidding process. Let's see how our agents handle this autonomously.
+
+### Step 1: Initial Request
+
+The user talks to a virtual agent powered by LLM about a learning program needed for special needs students. The virtual agent automatically determines that it needs to be an RFX request, creates the request, informs the user, and kicks off the process in the background with Agent orchestration.
+
+### Step 2: Intake Process
+
+We're in Agent Studio using the intake manager use case. Once this use case kicks off, the orchestrator initiates the autonomous workflow. In this case, some validation occurs from agents, and another agent automatically creates the entire RFX documentation.
+
+This is where significant time savings occur, as this would typically take hours. The documentation could also be sent out via email or put on the portal for vendors to consume once the proposal goes out.
+
+### Step 3: Evaluation Phase
+
+Once proposals come in, vendors can ask questions during the question phase. The system collects all questions, keeps them in the database, and enables replies after the deadline.
+
+In the evaluation phase, different agents are used. The agents evaluate vendor responses using an analysis skill - another huge time saver. The system evaluates vendor responses using a large language model, and when that response is generated, it brings a human into the loop so someone can review the comparison and evaluations before making a decision.
+
+### Step 4: Final Approval
+
+This is where we bring a human into the loop for important, major decisions. The system provides vendor comparisons in a single pane of glass in ServiceNow. The human provides final approval, and a thank you email is automatically sent out.
+
+## Conclusion
+
+The RFX process saves tremendous time using ServiceNow's agentic AI capabilities.

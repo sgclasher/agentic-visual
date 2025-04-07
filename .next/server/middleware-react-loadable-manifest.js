@@ -1,0 +1,1 @@
+self.__REACT_LOADABLE_MANIFEST="{\"app\\\\page.tsx -> ./components/AgentFlow\":{\"id\":\"app\\\\page.tsx -> ./components/AgentFlow\",\"files\":[\"static/css/_app-pages-browser_app_components_AgentFlow_tsx.css\",\"static/chunks/_app-pages-browser_app_components_AgentFlow_tsx.js\"]}}"

@@ -1,0 +1,102 @@
+/* React Flow Styles */
+.react-flow {
+  --bg-color: #f8fafc;
+  --text-color: #1e293b;
+  --edge-color: #64748b;
+  --connected-color: #2563eb;
+  --selected-color: #3b82f6;
+  --animated-edge-color: #93c5fd;
+}
+
+/* Support both old and new class naming for compatibility */
+.react-flow__node,
+.x6o3u1-0 {
+  border-radius: 8px;
+  min-width: 150px;
+}
+
+.react-flow__node-orchestratorNode,
+.x6o3u1-1-orchestratorNode {
+  width: auto;
+}
+
+.react-flow__node-agentNode,
+.x6o3u1-1-agentNode {
+  min-width: 150px;
+}
+
+.react-flow__node-triggerNode,
+.x6o3u1-1-triggerNode {
+  min-width: 120px;
+}
+
+.react-flow__node-toolNode,
+.x6o3u1-1-toolNode {
+  min-width: 100px;
+}
+
+.react-flow__controls,
+.x6o3u1-9 {
+  box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.08);
+}
+
+.react-flow__minimap,
+.x6o3u1-10 {
+  background-color: #f8fafc;
+}
+
+.react-flow__attribution,
+.x6o3u1-11 {
+  background: rgba(255, 255, 255, 0.8);
+  padding: 2px 5px;
+  border-radius: 4px;
+  font-size: 10px;
+  font-weight: 500;
+}
+
+.react-flow__handle,
+.x6o3u1-2 {
+  width: 8px;
+  height: 8px;
+  background-color: white;
+  border: 2px solid #64748b;
+}
+
+.react-flow__handle-top,
+.x6o3u1-2-top {
+  top: -4px;
+}
+
+.react-flow__handle-bottom,
+.x6o3u1-2-bottom {
+  bottom: -4px;
+}
+
+.react-flow__edge.animated path,
+.x6o3u1-3.animated path {
+  stroke-dasharray: 5;
+  animation: dashdraw 0.5s linear infinite;
+}
+
+@keyframes dashdraw {
+  from {
+    stroke-dashoffset: 10;
+  }
+}
+
+/* Node hover effects */
+.react-flow__node:hover,
+.x6o3u1-0:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transition: all 0.2s ease-in-out;
+}
+
+/* Additional styles for the new version */
+.react-flow__node button,
+.x6o3u1-0 button {
+  pointer-events: all !important;
+  cursor: pointer !important;
+  z-index: 10;
+  position: relative;
+} 

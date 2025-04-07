@@ -1,0 +1,111 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 248, 249, 250;
+  --background-end-rgb: 255, 255, 255;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+.react-flow__node {
+  padding: 10px;
+  border-radius: 8px;
+  width: 180px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.react-flow__node.no-shadow {
+  box-shadow: none !important;
+  background: transparent !important;
+  border: none !important;
+}
+
+/* Specific styles for the tool toggle button */
+.react-flow__node button {
+  pointer-events: all !important;
+  cursor: pointer !important;
+  z-index: 10;
+  position: relative;
+}
+
+.react-flow__node-agent {
+  background-color: #0070f3;
+  color: white;
+}
+
+.react-flow__node-process {
+  background-color: #81b5a1;
+  color: white;
+}
+
+.react-flow__node-decision {
+  background-color: #243f8c;
+  color: white;
+}
+
+.react-flow__node-data {
+  background-color: #5d26c1;
+  color: white;
+}
+
+.react-flow__handle {
+  width: 8px;
+  height: 8px;
+  background-color: #ffffff;
+  border: 1px solid #000000;
+}
+
+.react-flow__edge-path {
+  stroke: #333;
+  stroke-width: 2;
+}
+
+.react-flow__edge.animated path {
+  stroke-dasharray: 5;
+  animation: dashdraw 0.5s linear infinite;
+}
+
+@keyframes dashdraw {
+  from {
+    stroke-dashoffset: 10;
+  }
+}
+
+.node-tooltip {
+  position: absolute;
+  background-color: #333;
+  color: white;
+  padding: 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  max-width: 250px;
+  z-index: 1000;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.react-flow__node:hover .node-tooltip {
+  opacity: 1;
+}
+
+/* Global override to forcefully remove shadows from all React Flow elements */
+.react-flow,
+.react-flow *,
+.react-flow__node,
+.react-flow__node *,
+.react-flow-wrapper > * {
+  box-shadow: none !important;
+} 
