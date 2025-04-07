@@ -478,12 +478,14 @@ const globalStyles = `
   }
   
   .react-flow__handle {
-    opacity: 1 !important;
+    opacity: 0; /* Hide all handles by default */
     transition: all 0.2s ease;
   }
   
-  .react-flow__handle:hover {
-    transform: scale(1.5);
+  /* Only show handles when hovering if we want to make them interactive later */
+  .react-flow--connecting .react-flow__handle,
+  .react-flow__node:hover .react-flow__handle {
+    opacity: 0; /* Keep them hidden even on hover since interactions are disabled */
   }
   
   .react-flow__edge-path {

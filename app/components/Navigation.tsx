@@ -14,6 +14,41 @@ const navigationItems = [
   { name: 'Configure', href: '/config' },
 ];
 
+// Playground link with icon
+const PlaygroundLink = ({ isActive, isMobile = false }: { isActive: boolean, isMobile?: boolean }) => {
+  const baseClasses = isActive
+    ? 'bg-green-600 text-white'
+    : 'text-white hover:bg-green-500';
+  
+  const desktopClasses = `flex items-center px-3 py-2 rounded-md text-sm font-medium ${baseClasses}`;
+  const mobileClasses = `flex items-center px-3 py-2 rounded-md text-base font-medium ${baseClasses}`;
+  
+  return (
+    <Link
+      href="/playground"
+      className={isMobile ? mobileClasses : desktopClasses}
+      aria-current={isActive ? 'page' : undefined}
+      title="AI Workflow Playground"
+    >
+      <svg 
+        xmlns="http://www.w3.org/2000/svg" 
+        className="h-5 w-5 mr-1" 
+        fill="none" 
+        viewBox="0 0 24 24" 
+        stroke="currentColor"
+      >
+        <path 
+          strokeLinecap="round" 
+          strokeLinejoin="round" 
+          strokeWidth={2} 
+          d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" 
+        />
+      </svg>
+      {isMobile ? "Playground" : ""}
+    </Link>
+  );
+};
+
 // Memoized NavLink component for better performance
 const NavLink = memo(({ 
   href, 
@@ -84,6 +119,9 @@ const Navigation = () => {
               </div>
             </div>
           </div>
+          <div className="hidden md:flex items-center space-x-4">
+            <PlaygroundLink isActive={pathname === '/playground'} />
+          </div>
           <div className="-mr-2 flex md:hidden">
             <button
               onClick={toggleMenu}
@@ -143,6 +181,9 @@ const Navigation = () => {
               {item.name}
             </NavLink>
           ))}
+          <div className="mt-3 pt-2 border-t border-blue-700">
+            <PlaygroundLink isActive={pathname === '/playground'} isMobile={true} />
+          </div>
         </div>
       </div>
     </nav>
