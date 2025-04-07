@@ -464,52 +464,6 @@ export const ExecutiveAgenticWorkflowView: React.FC<ExecutiveAgenticWorkflowView
           )}
         </motion.div>
       </AnimatePresence>
-      
-      <motion.div 
-        className="bg-gradient-to-r from-indigo-50 to-blue-50 border border-blue-100 rounded-lg p-5"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.4 }}
-      >
-        <h3 className="text-xl font-bold text-center text-blue-800 mb-4">Agentic AI Implementation Journey</h3>
-        <div className="flex flex-wrap justify-center">
-          <div className="flex items-center mb-2 md:mb-0 mr-2 md:mr-6">
-            <motion.div 
-              className="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center mr-2"
-              whileHover={{ scale: 1.2 }}
-              transition={{ type: "spring", stiffness: 300 }}
-            >1</motion.div>
-            <span className="text-blue-800">Discovery</span>
-          </div>
-          <div className="w-6 h-0.5 bg-blue-300 hidden md:block mr-2"></div>
-          <div className="flex items-center mb-2 md:mb-0 mr-2 md:mr-6">
-            <motion.div 
-              className="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center mr-2"
-              whileHover={{ scale: 1.2 }}
-              transition={{ type: "spring", stiffness: 300 }}
-            >2</motion.div>
-            <span className="text-blue-800">Planning</span>
-          </div>
-          <div className="w-6 h-0.5 bg-blue-300 hidden md:block mr-2"></div>
-          <div className="flex items-center mb-2 md:mb-0 mr-2 md:mr-6">
-            <motion.div 
-              className="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center mr-2"
-              whileHover={{ scale: 1.2 }}
-              transition={{ type: "spring", stiffness: 300 }}
-            >3</motion.div>
-            <span className="text-blue-800">Implementation</span>
-          </div>
-          <div className="w-6 h-0.5 bg-blue-300 hidden md:block mr-2"></div>
-          <div className="flex items-center">
-            <motion.div 
-              className="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center mr-2"
-              whileHover={{ scale: 1.2 }}
-              transition={{ type: "spring", stiffness: 300 }}
-            >4</motion.div>
-            <span className="text-blue-800">Optimization</span>
-          </div>
-        </div>
-      </motion.div>
     </div>
   );
 };

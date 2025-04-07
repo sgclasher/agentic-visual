@@ -38,7 +38,7 @@ const useFlowDirection = () => useContext(FlowDirectionContext);
 function OrchestrationNode({ data }: any) {
   return (
     <motion.div 
-      className="px-4 py-3 rounded-lg bg-gradient-to-r from-red-500 to-red-600 text-white"
+      className="px-4 py-3 rounded-lg bg-gradient-to-r from-indigo-700 to-blue-800 text-white"
       initial={{ scale: 0.8, opacity: 0 }}
       animate={{ scale: 1, opacity: 1 }}
       transition={{ type: "spring", stiffness: 300, damping: 15 }}
@@ -47,14 +47,14 @@ function OrchestrationNode({ data }: any) {
         id="target-top"
         type="target" 
         position={Position.Top} 
-        className="w-3 h-3 bg-red-700" 
+        className="w-3 h-3 bg-indigo-700" 
         style={{ top: -4, left: '50%' }}
       />
       <Handle 
         id="target-left"
         type="target" 
         position={Position.Left} 
-        className="w-3 h-3 bg-red-700" 
+        className="w-3 h-3 bg-indigo-700" 
         style={{ left: -4, top: '50%' }}
       />
       <div className="font-bold text-center text-lg">{data.label}</div>
@@ -63,14 +63,14 @@ function OrchestrationNode({ data }: any) {
         id="source-bottom"
         type="source" 
         position={Position.Bottom} 
-        className="w-3 h-3 bg-red-700" 
+        className="w-3 h-3 bg-indigo-700" 
         style={{ bottom: -4, left: '50%' }}
       />
       <Handle 
         id="source-right"
         type="source" 
         position={Position.Right} 
-        className="w-3 h-3 bg-red-700" 
+        className="w-3 h-3 bg-indigo-700" 
         style={{ right: -4, top: '50%' }}
       />
     </motion.div>
@@ -762,13 +762,13 @@ const AnimatedWorkflow: React.FC<AnimatedWorkflowProps> = ({
       const newNodes: Node[] = [];
       const newEdges: Edge[] = [];
       
-      // Add orchestrator node
+      // Add use case node instead of orchestrator
       newNodes.push({
         id: 'orchestrator',
         type: 'orchestratorNode',
         data: { 
-          label: 'Orchestrator Agent',
-          description: 'Coordinates end-to-end process'
+          label: useCase.name,
+          description: useCase.description || 'Use case process flow'
         },
         position: { x: 450, y: 50 }, // Centered position, slightly higher
         style: { background: 'transparent', border: 'none', boxShadow: 'none' },
@@ -799,7 +799,8 @@ const AnimatedWorkflow: React.FC<AnimatedWorkflowProps> = ({
           type: 'trigger',
           animated: true,
           data: { 
-            type: 'trigger'
+            type: 'trigger',
+            label: 'Initiates'
           }
         });
       });
@@ -854,7 +855,8 @@ const AnimatedWorkflow: React.FC<AnimatedWorkflowProps> = ({
           type: 'orchestration',
           animated: true,
           data: { 
-            type: 'orchestration'
+            type: 'orchestration',
+            label: 'Participates in'
           }
         });
         
@@ -1146,6 +1148,32 @@ const AnimatedWorkflow: React.FC<AnimatedWorkflowProps> = ({
     }
   }, [nodes.length, edges.length, isReady]);
 
+  // Node colors
+  const getNodeColor = (n: Node) => {
+    if (n.type === 'orchestratorNode') return '#4338ca'; // Indigo-700
+    if (n.type === 'agentNode') return '#2563eb';
+    if (n.type === 'triggerNode') return '#bfdbfe';
+    if (n.type === 'toolNode' || n.type === 'toolsGroupNode') return '#374151';
+    if (n.type === 'valueNode') {
+      const valueType = n.data?.valueType || 'default';
+      if (valueType === 'agent') return '#059669';
+      if (valueType === 'useCase') return '#2563eb';
+      if (valueType === 'solution') return '#7e22ce';
+      return '#16a34a';
+    }
+    return '#333333';
+  };
+  
+  // Node outline colors
+  const getNodeOutlineColor = (n: Node) => {
+    if (n.type === 'orchestratorNode') return '#c7d2fe'; // Indigo-200
+    if (n.type === 'agentNode') return '#dbeafe';
+    if (n.type === 'triggerNode') return '#3b82f6';
+    if (n.type === 'toolNode' || n.type === 'toolsGroupNode') return '#9ca3af';
+    if (n.type === 'valueNode') return '#d1fae5';
+    return '#e5e7eb';
+  };
+
   return (
     <FlowDirectionContext.Provider value={flowDirectionContextValue}>
       <div className="h-[750px] w-full border border-gray-300 rounded-lg bg-gray-50 overflow-hidden">
@@ -1221,13 +1249,13 @@ const AnimatedWorkflow: React.FC<AnimatedWorkflowProps> = ({
             <Controls />
             <MiniMap
               nodeStrokeColor={(n: Node) => {
-                if (n.type === 'orchestratorNode') return '#ef4444';
+                if (n.type === 'orchestratorNode') return '#4338ca'; // Indigo-700
                 if (n.type === 'agentNode') return '#4f46e5';
                 if (n.type === 'triggerNode') return '#3b82f6';
                 return '#64748b';
               }}
               nodeColor={(n: Node) => {
-                if (n.type === 'orchestratorNode') return '#fecaca';
+                if (n.type === 'orchestratorNode') return '#c7d2fe'; // Indigo-200
                 if (n.type === 'agentNode') return '#c7d2fe';
                 if (n.type === 'triggerNode') return '#bfdbfe';
                 if (n.type === 'valueNode') {
