@@ -1,6 +1,49 @@
 # ServiceNow Agentic AI Visualization
 
-A visualization tool for ServiceNow's Agentic AI capabilities, allowing you to explore and understand the relationship between agents, tools, use cases, triggers, and capabilities.
+A visual workflow tool for ServiceNow's Agentic AI framework, showcasing agent relationships, orchestration, and value metrics using React Flow.
+
+## Features
+
+- Interactive agent workflow visualization
+- Orchestration paths and agent relationships
+- Tools and capabilities visualization
+- Business value metrics display
+- Toggleable views (Vertical/Horizontal layout)
+- Animation and visual enhancements
+
+## Technology Stack
+
+- Next.js
+- React
+- XY Flow (React Flow v12)
+- Framer Motion
+- TailwindCSS
+- TypeScript
+- Dagre (for graph layouts)
+
+## Getting Started
+
+1. Clone the repository
+2. Install dependencies:
+   ```
+   npm install
+   ```
+3. Run the development server:
+   ```
+   npm run dev
+   ```
+4. Open [http://localhost:3000](http://localhost:3000) in your browser
+
+## Usage
+
+This visualization tool provides an interactive view of agent workflows, including:
+
+- Orchestration agents and their relationships
+- Specialized agent nodes with tool visualizations
+- Process metrics and business value indicators
+- Adjustable layouts for different viewing preferences
+
+Toggle tools, value metrics, and layout direction using the control panel in the top left corner.
 
 ## Project Overview
 
@@ -336,14 +379,6 @@ The fetched data includes the essential Agentic AI architecture components (Use 
 - `ExecutiveAgenticWorkflowView.tsx` - Provides a business-focused view of the entire process
 - `Navigation.tsx` - Main navigation component
 
-## Technology Stack
-
-- Next.js 14.x
-- React 18.x
-- TypeScript
-- TailwindCSS
-- Framer Motion (for animations)
-
 ## License
 
 MIT 
@@ -388,5 +423,4 @@ The following unused files, directories, and empty folders have been cleaned up 
 - `/app/explorer/` - Unused explorer page
 - `/app/components/Navbar.tsx` - Replaced by Navigation component
 - `/pages/` - Empty legacy Next.js pages directory (app directory is used instead)
-- Test files in the root directory #   a g e n t i c - v i s u a l  
- 
+- Test files in the root directory
